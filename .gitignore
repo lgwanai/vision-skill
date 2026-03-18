@@ -1,0 +1,22 @@
+# Environments
+.env
+.env.*
+!.env.example
+
+# Trae/Claude specific
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Skill packaging
+dist/
+*.skill
+
+# Task data
+.tasks/
+*.jpg
+
+# Idea
+idea.md
