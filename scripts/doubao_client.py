@@ -32,7 +32,7 @@ class DoubaoClient:
         logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger(__name__)
 
-    def vision_recognition(self, image_url, text="你看见了什么？"):
+    def vision_recognition(self, image_url, text="你看见了什么？", model_override=None):
         """
         视觉识别
         
@@ -57,7 +57,7 @@ class DoubaoClient:
         # 豆包视觉模型通常支持 OpenAI 格式。
         
         payload = {
-            "model": self.vision_model,
+            "model": model_override or self.vision_model,
             "messages": [
                 {
                     "role": "user",
@@ -113,7 +113,7 @@ class DoubaoClient:
             self.logger.error(f"视觉识别失败: {str(e)}")
             return {"error": str(e)}
 
-    def generate_image(self, prompt, image_urls=None, sequential_options=None):
+    def generate_image(self, prompt, image_urls=None, sequential_options=None, model_override=None):
         """
         图像生成 (文生图/图生图)
         
@@ -128,7 +128,7 @@ class DoubaoClient:
         url = f"{self.base_url}/images/generations"
         
         payload = {
-            "model": self.image_model,
+            "model": model_override or self.image_model,
             "prompt": prompt,
             "response_format": "url",
             "size": "2K",
