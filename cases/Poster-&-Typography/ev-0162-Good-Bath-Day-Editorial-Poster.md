@@ -1,0 +1,18 @@
+# Good Bath Day Editorial Poster
+
+- **ID:** `ev-0162`
+- **Source:** evolink (Poster & Illustration)
+- **Unified Category:** Poster & Typography
+- **Author:** Kazuch75240438
+- **Original:** https://x.com/Kazuch75240438/status/2048205418238030327
+- 🚀 **Raycast Friendly**
+
+![Output 1](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-API-and-Prompts/main/images/poster_case162/output.jpg)
+
+## 📝 Prompt
+
+```text
+Create a soft editorial lifestyle poster for {argument name="event date" default="4.26"} celebrating Japanese bath culture, designed like a refined magazine feature page in portrait orientation. The layout is split into two main columns with a pale cream and warm gray background, thin divider lines, elegant serif typography, and muted sage-green accents. At the top left, include the small heading “LIFESTYLE / FEATURE”, then a large date line reading “{argument name="event date" default="4.26"} EVENT”, followed by the large Japanese title “よい風呂の日” and the subtitle “特集” in sage green, with a small bathtub icon nearby. Beneath that, add the Japanese tagline “心も体も、ととのう時間。” and several short body-text blocks in Japanese explaining the meaning of Good Bath Day, including references to “4(よ)2(ふ)6(ろ)” and the benefits of bathing for body and mind. On the right side, show a bright, airy bathroom interior lit by soft natural morning light from a window, with beige and off-white tones, a wooden counter, folded white towels, a pump bottle, a sponge, woven baskets, and a few green plants. In front of the bathroom scene, place a youthful anime-style person with {argument name="hair color" default="soft medium brown"} tousled short hair, fair skin, and a relaxed expression, standing in a casual post-bath pose. The character wears a loose white T-shirt with a tiny dark square chest logo and light brown drawstring lounge pants, one hand in a pocket and the other holding a white towel up near the face and shoulder, conveying a fresh, just-bathed feeling. Near the character, include the handwritten-style Japanese side note “湯上がりの、リラックスタイム。” Add an oval badge on the lower right of the main image area with the English heading “GOOD BATH DAY” and Japanese explanatory text inside, plus a small bathtub icon. Below the main feature, include exactly 2 small inset images of the same character in the bathroom, each framed as rectangular mini-panels with narrow vertical Japanese captions beside them. At the bottom, create exactly 4 rounded rectangular information cards in a row: card 1 labeled “POINT 01” with the heading “お風呂の基本” and text about soaking in lukewarm water around 38–40°C; card 2 labeled “POINT 02” with the heading “日常でできること” and text about making bathing part of a routine instead of only showering; card 3 labeled “POINT 03” with the heading “楽しみ方・取り入れ方” and text about bath salts, scents, music, and lighting; card 4 labeled “まとめ” with concluding Japanese text about sustainable self-care. Decorate the cards with small illustrated elements such as leaves, a bathtub, a candle, a bottle, lavender sprigs, and a basket of folded towels. Along the very bottom, add a horizontal green tip strip labeled “今日からできる TIP” with exactly 3 checklist items: “就寝の1〜2時間前に入浴する”, “スマホは浴室に持ち込まない”, and “水分補給を忘れずに”. Place a final handwritten-style Japanese phrase at the lower right reading “自分をいたわる時間を。” The overall look should be clean, gentle, wellness-focused, feminine-neutral, and polished like a Japanese seasonal magazine infographic, with delicate anime illustration, soft shadows, subtle textures, and calm spa-like atmosphere.
+```
+
+---

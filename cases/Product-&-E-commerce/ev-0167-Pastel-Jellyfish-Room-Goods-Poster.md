@@ -1,0 +1,18 @@
+# Pastel Jellyfish Room Goods Poster
+
+- **ID:** `ev-0167`
+- **Source:** evolink (Ad Creative)
+- **Unified Category:** Product & E-commerce
+- **Author:** Ayu_AI_0912
+- **Original:** https://x.com/Ayu_AI_0912/status/2048309565817766139
+- 🚀 **Raycast Friendly**
+
+![Output 1](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-API-and-Prompts/main/images/poster_case167/output.jpg)
+
+## 📝 Prompt
+
+```text
+{"type":"pastel lifestyle poster / character room-goods feature sheet","theme":"soft dreamy lavender jellyfish aesthetic","style":"Japanese cute editorial graphic, airy white background, pastel lilac palette, delicate handwritten notes, sparkles and tiny doodles, soft product photography mixed with magazine layout","subject":{"character":{"name":"{argument name=\"character name\" default=\"くらげちゃん\"}","appearance":"young woman with a short platinum-blonde bob haircut, wearing a fluffy pale-lavender zip hoodie over a white inner top, shown from chest up on the lower right, face intentionally obscured with a plain beige rectangle"}},"layout":{"orientation":"vertical poster","background":"clean white with faint pastel doodles of stars, bubbles, tiny jellyfish, and musical notes","sections":[{"title":"header","position":"top","count":5,"labels":["speech bubble intro","main title","small subtitle GOODS","horizontal lavender ribbon tagline","round badge on the top right"]},{"title":"featured goods grid","position":"upper and middle left","count":6,"labels":["ゆらゆらくらげランプ","くらげと夢見るベッドリネン","くらげシェルミラー","くらげグラデマグ","くらげのときめき収納ボックス","くらげふわもこマット"]},{"title":"side handwritten note","position":"upper right","count":1,"labels":["みんなも くらげちゃんRoomで いっしょに まったりしよー♡♡"]},{"title":"room concept box","position":"lower left","count":1,"labels":["くらげちゃんの お部屋作りのこだわり"]},{"title":"pick up circle","position":"lower center-left","count":1,"labels":["Pick up!"]}],"product_images":{"count":6,"items":[{"name":"ゆらゆらくらげランプ","description":"small translucent jellyfish-shaped lamp on a white base, glowing softly in pale blue-lavender"},{"name":"くらげと夢見るベッドリネン","description":"plush pastel-lavender bed with fluffy comforter and pillows, dreamy cozy bedroom styling"},{"name":"くらげシェルミラー","description":"small tabletop mirror with a puffy shell-like pastel-lilac frame and rounded base"},{"name":"くらげグラデマグ","description":"ceramic mug with lavender-to-pink gradient and a simple jellyfish illustration"},{"name":"くらげのときめき収納ボックス","description":"pastel storage box holding cosmetics and small bottles, decorated with a jellyfish emblem"},{"name":"くらげふわもこマット","description":"small fluffy cloud-like or jellyfish-like mat in pale lavender and white"}]},"text_elements":{"main_title":"{argument name=\"headline text\" default=\"くらげちゃんの お部屋アイテム\"}","badge_text":"くらげちゃんの Room お部屋作りの こだわりポイントも 教えちゃうよ。","tagline":"ふわふわで甘くて、ちょっぴり夢みたいな私のお部屋へようこそ♡","speech_bubble":"くらげちゃんの お気に入りだけ集めた お部屋アイテムを紹介するよ♪","concept_points":{"count":3,"items":["色は白とラベンダーで統一!","光が集まるふわっとした空間に","お友達入りのアイテムに囲まれて 自分らしくいられる空間を大切にしてるよ♪"]},"product_blurbs":"each product has a short handwritten Japanese description in a cute casual font beside or below the image"},"composition":"the poster is left-heavy with product cards and text, while the character portrait occupies the lower right third, slightly overlapping the layout","color_palette":{"count":5,"colors":["white","pastel lavender","soft lilac","pale gray-violet","touches of pastel blue-pink gradient"]},"rendering_notes":"keep everything very soft, feminine, and cozy; rounded corners on all product photos; mix of bold Japanese headline typography and light handwritten annotations; subtle shadows; clean high-key lighting; social-media-ready editorial collage aesthetic"}
+```
+
+---

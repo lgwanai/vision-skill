@@ -23,3 +23,11 @@ idea.md
 
 # Release Notes
 RELEASE_NOTE.md
+
+# Case extraction intermediates (keep cases/ which is the merged library)
+awesome-gpt-image-2-cases/
+awesome-gpt-image-2-cases-v2/
+awesome-gpt-image-2-evolink-cases/
+extract-prompts.py
+extract-prompts-v2.py
+extract-evolink.py
