@@ -837,7 +837,7 @@ def render_prompt_from_template(
 
 if __name__ == "__main__":
     import argparse
-    from dotenv import load_dotenv
+    from config import load_config
 
     parser = argparse.ArgumentParser(description="Template Analyzer CLI (debug)")
     parser.add_argument("--pptx", help="模板 .pptx 路径（可选）")
@@ -845,15 +845,12 @@ if __name__ == "__main__":
     parser.add_argument("--rebuild", action="store_true", help="无视缓存重新分析")
     args = parser.parse_args()
 
-    # 找 .env
-    for cand in [
-        Path(__file__).parent / ".env",
-        Path.home() / ".claude/skills/gpt-image2-ppt-skills/.env",
-    ]:
-        if cand.exists():
-            load_dotenv(cand, override=True)
-            print(f"loaded env: {cand}")
-            break
+    # Load config.txt (auto-searches project root, cwd, etc.)
+    path = load_config()
+    if path:
+        print(f"loaded config: {path}")
+    else:
+        print("Warning: config.txt not found, using system environment only")
 
     profile = analyze_template(args.pptx, args.images, rebuild=args.rebuild)
     print(json.dumps(profile, ensure_ascii=False, indent=2)[:3000])

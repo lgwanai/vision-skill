@@ -9,9 +9,7 @@ import os
 import json
 import logging
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
+import config  # noqa: F401 — loads config.txt into environment
 
 
 class VisionClient:

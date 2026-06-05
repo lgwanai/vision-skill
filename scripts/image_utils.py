@@ -8,10 +8,8 @@
 import os
 import base64
 import logging
-from dotenv import load_dotenv
+import config  # noqa: F401 — loads config.txt into environment
 from cos_client import COSClient
-
-load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

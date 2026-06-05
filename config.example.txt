@@ -1,0 +1,39 @@
+# ========================================
+# Vision Model Configuration
+# ========================================
+
+# Vision Recognition Model (视觉识别模型)
+VISION_API_BASE_URL=https://ark.cn-beijing.volces.com/api/v3
+VISION_API_KEY=your_api_key_here
+VISION_MODEL=doubao-seed-2-0-pro-260215
+VISION_FALLBACK_MODEL=
+
+# Image Generation Model (图像生成模型)
+IMAGE_API_BASE_URL=https://ark.cn-beijing.volces.com/api/v3
+IMAGE_API_KEY=your_api_key_here
+IMAGE_MODEL=doubao-seedream-5-0-260128
+IMAGE_FALLBACK_MODEL=
+
+# ========================================
+# Image Upload Mode
+# ========================================
+# Options: cos, base64
+# - cos: Upload images to Tencent COS and use URL
+# - base64: Convert images to base64 string directly
+IMAGE_UPLOAD_MODE=cos
+
+# ========================================
+# Tencent Cloud COS Settings (Required if IMAGE_UPLOAD_MODE=cos)
+# ========================================
+COS_SECRET_ID=your_cos_secret_id
+COS_SECRET_KEY=your_cos_secret_key
+COS_REGION=ap-beijing
+COS_BUCKET_NAME=your_bucket_name
+
+# ========================================
+# PPT Generation Settings (uses IMAGE_API_* above for image generation)
+# ========================================
+# PPT generation reuses IMAGE_API_BASE_URL, IMAGE_API_KEY, IMAGE_MODEL
+# for slide image generation. No additional API keys required.
+# Optional: override model for PPT generation
+# PPT_IMAGE_MODEL=doubao-seedream-5-0-260128

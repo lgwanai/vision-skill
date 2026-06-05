@@ -261,7 +261,7 @@ Master index: `cases/INDEX.md`
 The skill is exposed via a CLI script `scripts/vision_cli.py`.
 
 ### Prerequisites
-Environment variables must be set in `.env` or the system environment:
+Environment variables must be set in `config.txt` (or system environment):
 - `VISION_API_BASE_URL`, `VISION_API_KEY`, `VISION_MODEL` (for vision recognition)
 - `IMAGE_API_BASE_URL`, `IMAGE_API_KEY`, `IMAGE_MODEL` (for image generation)
 - `IMAGE_UPLOAD_MODE`: Choose `cos` or `base64` (default: `cos`)

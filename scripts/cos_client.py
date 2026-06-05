@@ -9,13 +9,11 @@ import os
 import sys
 import logging
 from datetime import datetime
-from dotenv import load_dotenv
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 from qcloud_cos.cos_exception import CosServiceError, CosClientError
 
-# 加载环境变量
-load_dotenv()
+import config  # noqa: F401 — loads config.txt into environment
 
 class COSClient:
     """腾讯云COS客户端类"""

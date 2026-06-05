@@ -9,10 +9,7 @@ import os
 import json
 import logging
 import requests
-from dotenv import load_dotenv
-
-# 加载环境变量
-load_dotenv()
+import config  # noqa: F401 — loads config.txt into environment
 
 class DoubaoClient:
     """豆包大模型客户端类"""

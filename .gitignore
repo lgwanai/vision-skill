@@ -2,6 +2,8 @@
 .env
 .env.*
 !.env.example
+config.txt
+!.config.example.txt
 
 # Trae/Claude specific
 .claude/

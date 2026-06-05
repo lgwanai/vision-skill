@@ -115,8 +115,8 @@ cd vision-skill
 pip install -r requirements.txt
 
 # 3. 配置（使用 BASE64 模式，无需 COS）
-cp .env.example .env
-# 编辑 .env，设置：
+cp config.example.txt config.txt
+# 编辑 config.txt，设置：
 # IMAGE_UPLOAD_MODE=base64
 # VISION_API_KEY=your_api_key
 # VISION_MODEL=your_model
@@ -170,10 +170,10 @@ pip install -r requirements.txt
 复制配置文件并填入密钥：
 
 ```bash
-cp .env.example .env
+cp config.example.txt config.txt
 ```
 
-在 `.env` 中填入配置：
+在 `config.txt` 中填入配置：
 
 #### 视觉识别模型配置
 ```ini
