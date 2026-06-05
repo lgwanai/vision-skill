@@ -1,13 +1,13 @@
 ---
 name: vision-skill
-description: Use this skill for computer vision tasks including image recognition (OCR, object detection) and image generation (text-to-image, image-to-image). Supports asynchronous task execution with flexible image upload modes (COS or BASE64) and configurable vision models (OpenAI-compatible APIs). IMPORTANT: For image generation, NEVER generate immediately. Follow the mandatory confirmation workflow: understand requirements → search cases → draft prompt → confirm → iterate → generate.
+description: "Use this skill for computer vision tasks including image recognition (OCR, object detection), image generation (text-to-image, image-to-image), and PPT generation (30+ styles, Markdown to PPTX). Supports asynchronous task execution with flexible upload modes and configurable models. IMPORTANT: Always follow mandatory confirmation workflow - NEVER generate immediately without user approval. For PPT, gather requirements then draft slides_plan.md then confirm then smoke test then generate."
 ---
 
 # Vision Skill
 
 ## Overview
 
-This skill provides capabilities for visual recognition and image generation. It supports configurable vision models (OpenAI-compatible APIs), flexible image upload modes (COS or BASE64), and executes tasks asynchronously. **Includes a unified GPT Image 2 case library (1322 cases)** for prompt engineering reference.
+This skill provides capabilities for visual recognition, image generation, and PPT generation. It supports configurable vision models (OpenAI-compatible APIs), flexible image upload modes (COS or BASE64), and executes tasks asynchronously. **Includes a quality-filtered GPT Image 2 case library (832 curated cases)** for prompt engineering reference, **bilingual prompt output (Chinese + English)** for ChatGPT and 豆包 compatibility, and **30+ built-in PPT styles** for slide generation.
 
 ## Capabilities
 
@@ -26,8 +26,9 @@ Generate images from text prompts, optionally using reference images. **CRITICAL
 ┌──────────────────────────────────────────────────────────────┐
 │  STEP 0: DETECT — Check if reference image is REQUIRED       │
 │  STEP 1: UNDERSTAND — Confirm requirements with user         │
-│  STEP 2: SEARCH — Find relevant cases from 1322-case library │
-│  STEP 3: DRAFT — Compose prompt with case references         │
+│  STEP 1.5: FIDELITY — Choose strict/normal/creative mode     │
+│  STEP 2: SEARCH — Find relevant cases from case library      │
+│  STEP 3: DRAFT — Compose bilingual prompt with case refs     │
 │  STEP 4: CONFIRM — User MUST approve before generation       │
 │  STEP 5: ITERATE — Refine until user says "generate"         │
 │  STEP 6: EXECUTE — Generate image via vision_cli.py          │
@@ -112,15 +113,48 @@ Once reference requirements are resolved, confirm the following. Use `AskUserQue
 6. **Text/Content (文字)**: Any specific text, labels, or copy that must appear?
 7. **Constraints (约束)**: Any must-avoid elements? (no watermarks, no text, specific colors)
 
+---
+
+#### ⚖️ STEP 1.5 — FIDELITY MODE (忠实度模式)
+
+**Ask the user to choose a fidelity mode.** This is critical — the mode determines how much AI creativity is allowed and whether cases are referenced.
+
+Use `AskUserQuestion` to present the three options:
+
+| Mode | Label | Behavior | Best For |
+|------|-------|----------|----------|
+| 🔒 **Strict** | 严格模式 | **文字内容**严格遵循用户原文，AI 不得修改/编造/改写任何文字。光影、构图、画质等**视觉效果正常优化**。正常参考案例库。 | 品牌文案、UI 界面、海报文字、广告标语等需要精确文字的场合。中文内容尤其容易出现 AI 篡改的场景。 |
+| 📋 **Normal** | 普通模式 | 重点参考高质量案例，在用户需求基础上合理增强。文字和视觉效果均进行适度优化。 | 大多数图像生成场景的默认选择。 |
+| 🎨 **Creative** | 创意模式 | 尽最大可能联想，充分发挥 AI 艺术创作能力。使用最大质量注入（3+ 术语/类别）。案例仅作灵感参考。 | 艺术插画、概念设计、抽象表达、风格探索等创意场景。 |
+
+##### Mode Selection Logic:
+
+1. **Default = Normal** unless the user explicitly requests otherwise
+2. **Auto-detect strict**: If the user's request contains specific text/copy that must appear (slogans, brand names, UI labels, headings), suggest strict mode to prevent AI from altering it
+3. **Auto-detect creative**: If the user asks for "artistic", "conceptual", "abstract", "experimental", "unique style", "创意", "艺术" — suggest creative mode
+4. **For UI/text-heavy tasks**: Always suggest strict mode to ensure text accuracy (no hallucinated copy)
+
+##### CLI flags:
+```bash
+--fidelity strict    # Text exactly as specified, visual quality optimized
+--fidelity normal    # Balanced, case-referenced (default)
+--fidelity creative  # Maximum artistic freedom
+```
+
+##### Why this matters:
+The key insight: AI image generators often hallucinate or alter text content (Chinese text especially). Strict mode enforces text accuracy while still optimizing visual quality. Conversely, creative mode unleashes full artistic potential when text precision is not a priority.
+
+---
+
 **STEP 2 — SEARCH (案例检索):**
-Once requirements are confirmed, search the unified case library:
+Once requirements are confirmed, search the unified case library (832 quality-filtered cases):
 ```bash
 python3 scripts/search_cases.py "<keywords>" --category "<category>" --style "<style>" --limit 5
 ```
-Present 2-3 most relevant cases to the user as context/reference.
+Present 2-3 most relevant cases to the user as context/reference. (Applies to all modes — strict mode references cases for visual patterns while enforcing text accuracy.)
 
 **STEP 3 — DRAFT (智能提示词生成):**
-Use the intelligent prompt builder engine that integrates three-project methodology:
+Use the intelligent prompt builder engine that integrates three-project methodology. **Outputs bilingual (Chinese + English) by default** for ChatGPT and 豆包 compatibility:
 ```bash
 python3 scripts/prompt_builder.py \
   --subject "<subject>" \
@@ -134,17 +168,20 @@ python3 scripts/prompt_builder.py \
   --text "<text_content>" \
   --constraints "<constraints>" \
   --lang "<zh/en/ja>" \
+  --fidelity "<strict|normal|creative>" \
   --json-output
 ```
 
 The engine automatically:
 - Selects the optimal approach (JSON-structured / natural language / photography spec / platform-specific)
-- Injects category-specific best practices from 1322 cases (e.g., 46.7% use photography params, 41.8% structured layouts)
+- Outputs **both Chinese and English prompts** — use the Chinese version for 豆包/国内模型, English for ChatGPT/DALL·E
+- Respects fidelity mode: strict (minimal additions) / normal (case-referenced, 1 term/injection) / creative (max injections, 3+ terms)
+- Injects category-specific best practices from the quality-filtered case library
 - Applies style-matched quality injections (camera/lens/lighting/composition terms from professional photography)
 - Integrates negative constraints from the constraint library
-- References top-matched cases for pattern extraction
+- References top-matched cases for pattern extraction (normal mode only)
 
-**Prompt Quality Principles (from 3-project analysis):**
+**Prompt Quality Principles (from quality-filtered case analysis):**
 1. **Photography params** for realistic styles — lighting, lens, camera, composition, film stock
 2. **Structured sections** for complex layouts — panels, grids, rows, columns with explicit numbering
 3. **Negative constraints** — always include 3-5 "Avoid:" items from the constraint library
@@ -199,18 +236,21 @@ Specialized recognition for WeChat chat screenshots:
 - **Structured Output**: Returns JSON with platform, chat title, and message list
 - **Message Types**: Supports text, image, voice, video, link detection
 
-### 4. Unified Case Library (1322 cases)
-Searchable library of GPT Image 2 prompts from 3 community projects, organized in 10 unified categories:
-- Portrait & People (452 cases)
-- Poster & Typography (335 cases)
-- Social Media & UI (277 cases)
-- Product & E-commerce (90 cases)
-- Infographic & Charts (70 cases)
-- Illustration & Storytelling (55 cases)
-- Photography & Realism (68 cases)
-- Brand & Identity (24 cases)
-- Architecture & Scenes (12 cases)
-- Other (89 cases)
+### 4. Unified Case Library (832 quality-filtered cases)
+Searchable library of GPT Image 2 prompts from 3 community projects, deduplicated and quality-filtered. Organized in 10 unified categories:
+- Portrait & People (193 cases)
+- Poster & Typography (180 cases)
+- Social Media & UI (107 cases)
+- Photography & Realism (102 cases)
+- Illustration & Storytelling (87 cases)
+- Product & E-commerce (54 cases)
+- Infographic & Charts (42 cases)
+- Brand & Identity (20 cases)
+- Architecture & Scenes (15 cases)
+- Other (32 cases)
+
+> **Quality filter:** Removed 490 low-quality cases (empty prompts, duplicates, near-duplicates). Original data preserved in `references/data/`.
+> **Deduplication script:** `python3 scripts/deduplicate_cases.py` to regenerate after updating reference data.
 
 Search cases: `python3 scripts/search_cases.py "<query>" --limit 5`
 Browse by category: `cases/<category>/README.md`
@@ -277,6 +317,159 @@ python3 scripts/vision_cli.py status <task_id>
 # Or save result if completed
 python3 scripts/vision_cli.py status <task_id> --output ./final_result.png
 ```
+
+## 5. PPT Generation (⚠️ Interactive Confirmation Workflow)
+
+Generate visually striking 16:9 PPT slides from a Markdown outline + visual style, then package into a `.pptx` file. Uses the existing `IMAGE_API_*` model (does NOT require gpt-image-2).
+
+**30+ built-in styles** in `styles/` covering tech, business, academic, creative, and industry-specific aesthetics. See `docs/distilled-styles.md` for visual previews.
+
+### 🚨 Mandatory Interactive Workflow
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  STEP 1: GATHER — Ask user: content/audience/page count?     │
+│  STEP 2: RECOMMEND — Suggest 1-2 styles based on scenario    │
+│  STEP 3: DRAFT — Write slides_plan.md, show user for review  │
+│  STEP 4: CONFIRM PLAN — User MUST approve content            │
+│  STEP 5: SMOKE TEST — Generate 1 slide (cover) to verify     │
+│  STEP 6: CONFIRM STYLE — User approves style → generate all  │
+│  STEP 7: DELIVER — Package PPTX, tell user the path          │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**⚠️ NEVER skip confirmation steps. Information insufficiency = ASK, never guess.**
+
+---
+
+#### STEP 1 — GATHER (信息收集)
+
+Ask the user these questions. Use `AskUserQuestion` when choices are involved:
+
+1. **Content/Topic**: What is this presentation about?
+2. **Audience**: Who will see it? (executives, investors, students, general public)
+3. **Page Count**: How many slides approximately?
+4. **Style Preference**: Any visual preference? Tech-dark / business-clean / academic / creative / hand-drawn?
+5. **Template**: Does the user have an existing .pptx template to mimic? (optional)
+
+**If any of items 1-4 are unclear, ASK before proceeding.**
+
+---
+
+#### STEP 2 — RECOMMEND (风格推荐)
+
+Based on the topic and audience, recommend 2-3 styles:
+
+```bash
+python3 scripts/vision_cli.py ppt list-styles --format json
+```
+
+Style selection guide:
+- **Tech/AI/DevTools**: `dark-aurora`, `gradient-glass`, `data-science-consulting`
+- **Business/Pitch/Strategy**: `clean-tech-blue`, `editorial-mono`, `investment-company-business-plan`, `eco-green-business-plan`
+- **Academic/Thesis/Report**: `swiss-grid`, `geometric-duotone-thesis`, `final-year-project-thesis-defense`
+- **Creative/Brand/Culture**: `creative-agency`, `flowery`, `japanese-wabi`, `vector-illustration`
+- **Workshop/Training**: `hand-sketch`, `mind-maps-workshop-professional`
+
+---
+
+#### STEP 3 — DRAFT (草拟大纲)
+
+Write `slides_plan.md` following this format:
+
+```markdown
+---
+title: <Presentation Title>
+---
+
+## 1. [cover] Title Line
+Subtitle or tagline
+
+## 2. [content] Section Title
+- Key point 1
+- Key point 2
+
+## 3. [data] Key Metrics
+- Metric A: 85%
+- Metric B: 3.2x
+```
+
+Rules:
+- Each `## N.` heading = one slide
+- `[page_type]`: `cover` / `content` / `data` (default: `content`)
+- Heading line text becomes the slide title; body becomes content
+- **Present the md to user for review. Do NOT proceed until confirmed.**
+
+---
+
+#### STEP 4 — CONFIRM PLAN (确认大纲)
+
+Show the user the `slides_plan.md` content and ask:
+- "Content looks correct? Any changes to titles, body, or slide order?"
+- Make edits as requested until user says OK.
+
+Then convert to JSON:
+
+```bash
+python3 scripts/vision_cli.py ppt plan slides_plan.md -o slides_plan.json
+```
+
+---
+
+#### STEP 5 — SMOKE TEST (冒烟测试)
+
+Generate ONLY the first slide (cover) to verify style before full generation:
+
+```bash
+python3 scripts/vision_cli.py ppt generate \
+  --plan slides_plan.json \
+  --style dark-aurora \
+  --slides 1
+```
+
+Review the output with the user:
+- "Does this visual style work? Adjust style or proceed with all slides?"
+
+---
+
+#### STEP 6 — CONFIRM STYLE & GENERATE (确认风格→全量生成)
+
+Once user approves, generate all remaining slides:
+
+```bash
+python3 scripts/vision_cli.py ppt generate \
+  --plan slides_plan.json \
+  --style dark-aurora
+```
+
+---
+
+#### STEP 7 — DELIVER (交付)
+
+Tell the user:
+```
+✅ PPT 已生成!
+- 输出目录: outputs/<timestamp>/
+- PPTX 文件: outputs/<timestamp>/<title>.pptx
+- 每页图片: outputs/<timestamp>/images/
+```
+
+---
+
+### PPT Commands Summary
+
+| Command | Description |
+|---------|-------------|
+| `vision_cli.py ppt list-styles` | List all available styles |
+| `vision_cli.py ppt plan <md>` | Convert slides_plan.md → slides_plan.json |
+| `vision_cli.py ppt generate --plan <json> --style <id>` | Generate slides |
+| `vision_cli.py ppt generate ... --slides 1` | Smoke test (first slide only) |
+| `vision_cli.py ppt generate ... --slides 1,3,5` | Generate specific slides only |
+| `vision_cli.py ppt sessions` | List generation history |
+
+### Style Preview
+
+To see visual previews of all styles, read `docs/distilled-styles.md`. Each style's full prompt template is in `styles/<id>.md`.
 
 ## Task Management
 All tasks are executed asynchronously by default.

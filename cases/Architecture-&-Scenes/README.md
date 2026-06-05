@@ -1,6 +1,48 @@
 # Architecture & Scenes
 
-**12 cases**
+**15 cases**
+---
+
+## [ym-0002] Illustrated City Food Map ⭐ 🚀
+
+- Source: youmind | Author: 皮皮特
+
+[📄 Full case →](ym-0002-Illustrated-City-Food-Map.md)
+---
+
+## [ym-0060] YouTube Thumbnail - Four Seasons Japanese Panorama 🚀
+
+- Source: youmind | Author: おやぎ
+
+[📄 Full case →](ym-0060-YouTube-Thumbnail-Four-Seasons-Japanese-Panorama.md)
+---
+
+## [ym-0078] Comic / Storyboard - Fantasy City Camera Path
+
+- Source: youmind | Author: insMind
+
+[📄 Full case →](ym-0078-Comic-Storyboard-Fantasy-City-Camera-Path.md)
+---
+
+## [ff-0286] 珠江新城剪纸璀璨夜景
+
+- Source: freestylefly | Author: @liyue_ai
+
+[📄 Full case →](ff-0286-珠江新城剪纸璀璨夜景.md)
+---
+
+## [ev-0053] New Chinese Minimalist Floral Illustration
+
+- Source: evolink | Author: liyue_ai
+
+[📄 Full case →](ev-0053-New-Chinese-Minimalist-Floral-Illustration.md)
+---
+
+## [ev-0089] Solar Desert Worldbuilding Kit
+
+- Source: evolink | Author: iamaiistudio
+
+[📄 Full case →](ev-0089-Solar-Desert-Worldbuilding-Kit.md)
 ---
 
 ## [ff-0489] 城市地图微缩旅行海报
@@ -57,27 +99,6 @@
 - Source: freestylefly | Author: @TanShilong
 
 [📄 Full case →](ff-0211-天坛古建拆解全图.md)
----
-
-## [ff-0050] 建筑空间场景图 🚀
-
-- Source: freestylefly | Author: @nomen_machine
-
-[📄 Full case →](ff-0050-建筑空间场景图-4.md)
----
-
-## [ff-0020] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @yammamon
-
-[📄 Full case →](ff-0020-信息图可视化设计-22.md)
----
-
-## [ff-0018] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @mm_zzm44854
-
-[📄 Full case →](ff-0018-信息图可视化设计-24.md)
 ---
 
 ## [ff-0011] 一张手绘风格的城市美食地图，以台州为主题

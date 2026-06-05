@@ -1,6 +1,20 @@
 # Brand & Identity
 
-**24 cases**
+**20 cases**
+---
+
+## [ym-0095] Product Marketing - Fictional Japanese Rocket Stamp Sheet 🚀
+
+- Source: youmind | Author: カーブミラー
+
+[📄 Full case →](ym-0095-Product-Marketing-Fictional-Japanese-Rocket-Stamp-Sheet.md)
+---
+
+## [ev-0040] Based on the video content and this current frame, use GPT to generate a YouT...
+
+- Source: evolink | Author: chatcutapp
+
+[📄 Full case →](ev-0040-Based-on-the-video-content-and-this-current-frame-use-GPT-t.md)
 ---
 
 ## [ff-0478] 夹层式品牌编辑海报
@@ -66,6 +80,13 @@
 [📄 Full case →](ff-0342-四季包装-Campaign-宫格.md)
 ---
 
+## [ff-0135] 应用界面样机图 🚀
+
+- Source: freestylefly | Author: @ryuya__31
+
+[📄 Full case →](ff-0135-应用界面样机图.md)
+---
+
 ## [ff-0310] 零食品牌技术分解图 ⭐
 
 - Source: freestylefly | Author: @TechieBySA
@@ -78,6 +99,13 @@
 - Source: freestylefly | Author: @MrLarus
 
 [📄 Full case →](ff-0294-精美潮汕菜馆菜单图.md)
+---
+
+## [ff-0138] 封面排版设计图 🚀
+
+- Source: freestylefly | Author: @aiehon_aya
+
+[📄 Full case →](ff-0138-封面排版设计图.md)
 ---
 
 ## [ff-0247] 运动健身图标字体设计
@@ -101,13 +129,6 @@
 [📄 Full case →](ff-0216-雅致图案四款时尚单品设计.md)
 ---
 
-## [ff-0186] 品牌视觉识别图
-
-- Source: freestylefly | Author: @ProperPrompter
-
-[📄 Full case →](ff-0186-品牌视觉识别图.md)
----
-
 ## [ff-0172] 赛博科幻桃太郎主视觉图
 
 - Source: freestylefly | Author: @SSSS_CRYPTOMAN
@@ -120,53 +141,4 @@
 - Source: freestylefly | Author: @TanShilong
 
 [📄 Full case →](ff-0160-品牌吉祥物设定图.md)
----
-
-## [ff-0138] 封面排版设计图 🚀
-
-- Source: freestylefly | Author: @aiehon_aya
-
-[📄 Full case →](ff-0138-封面排版设计图-3.md)
----
-
-## [ff-0137] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @ryuya__31
-
-[📄 Full case →](ff-0137-界面交互设计图-4.md)
----
-
-## [ff-0136] 品牌视觉识别图 🚀
-
-- Source: freestylefly | Author: @ryuya__31
-
-[📄 Full case →](ff-0136-品牌视觉识别图-2.md)
----
-
-## [ff-0135] 应用界面样机图 🚀
-
-- Source: freestylefly | Author: @ryuya__31
-
-[📄 Full case →](ff-0135-应用界面样机图-4.md)
----
-
-## [ff-0134] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @ryuya__31
-
-[📄 Full case →](ff-0134-界面交互设计图-5.md)
----
-
-## [ff-0132] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @Colin_Leeee
-
-[📄 Full case →](ff-0132-界面交互设计图-7.md)
----
-
-## [ff-0130] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @chi_vc_
-
-[📄 Full case →](ff-0130-界面交互设计图-9.md)
 ---

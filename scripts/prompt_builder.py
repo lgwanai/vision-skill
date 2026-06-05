@@ -3,16 +3,54 @@
 GPT Image 2 Prompt Engineering Engine.
 Builds production-grade image prompts by combining:
 1. User requirements analysis
-2. Matched case patterns from the 1322-case library
+2. Matched case patterns from the 832-case library
 3. Category-specific best practices distilled from 3 community projects
 
 Architecture:
   User Requirements + Matched Cases → Strategy Selection → Template Assembly → Quality Injection → Final Prompt
+
+v2.1 Features:
+  - Bilingual output (zh/en) for ChatGPT + Doubao compatibility
+  - Fidelity modes: strict (exact text) / normal (case-referenced) / creative (max artistic freedom)
 """
 
 import json, os, re, sys
 
 INDEX_PATH = os.path.join(os.path.dirname(__file__), "..", "cases", "index.json")
+
+# ═══════════════════════════════════════════════════════════════
+# FIDELITY MODES
+# ═══════════════════════════════════════════════════════════════
+
+FIDELITY_MODES = {
+    "strict": {
+        "label": "严格模式",
+        "label_en": "Strict",
+        "description": "严格遵循用户指定的文字内容，AI不可自行发挥修改文字。光影、构图、画质等视觉效果正常优化。适用于品牌文案、UI界面、海报文字等需要精确文字的场合。",
+        "description_en": "Faithfully reproduce user-specified text/copy exactly. Visual quality (lighting, composition, effects) is still optimized. For brand copy, UI text, posters where text accuracy is critical.",
+        "case_weight": 1.0,      # Reference cases for visual patterns
+        "injection_level": 1,     # Normal quality injections (lighting, camera, etc.)
+        "creativity": 0.3,        # Low on TEXT creativity, normal on visuals
+    },
+    "normal": {
+        "label": "普通模式",
+        "label_en": "Normal",
+        "description": "重点参考高质量案例，在用户需求基础上合理增强。适用于大多数图像生成场景。",
+        "description_en": "Heavily reference quality cases, enhance user requirements reasonably. For most image generation scenarios.",
+        "case_weight": 1.0,       # Full case reference
+        "injection_level": 1,     # Standard quality injections
+        "creativity": 0.5,        # Balanced creativity
+    },
+    "creative": {
+        "label": "创意模式",
+        "label_en": "Creative",
+        "description": "尽最大可能联想，充分发挥AI艺术创作能力。适用于艺术插画、概念设计、抽象表达等创意场景。",
+        "description_en": "Maximum association and AI artistic freedom. For art illustrations, concept design, abstract expression.",
+        "case_weight": 0.3,       # Light case reference (just for inspiration)
+        "injection_level": 2,     # Maximum quality injections
+        "creativity": 1.0,        # Full creativity
+    },
+}
 
 # ============================================================
 # CATEGORY-SPECIFIC BEST PRACTICES (distilled from 1322 cases)
@@ -396,40 +434,63 @@ class PromptBuilder:
             "category": category,
         }
 
-    def build(self, requirements, matched_cases=None, user_lang="zh"):
+    def build(self, requirements, matched_cases=None, user_lang="zh", fidelity="normal", bilingual=True):
         """
-        Build a production-grade prompt from requirements and matched cases.
+        Build prompts from requirements and matched cases.
 
         Args:
             requirements: dict with subject, style, purpose, category, ratio, text, constraints, ref_info
             matched_cases: list of case dicts from search_cases()
             user_lang: user's language (zh/en/ja)
+            fidelity: "strict" / "normal" / "creative"
+            bilingual: if True, output both zh and en versions
 
         Returns:
-            dict with {prompt, explanation, cases_used, methodology_notes}
+            dict with {prompt, prompt_en, explanation, cases_used, methodology_notes, fidelity_mode}
         """
         analysis = self.analyze_requirements(requirements)
         category = analysis["category"]
         strategy = CATEGORY_STRATEGIES.get(category, CATEGORY_STRATEGIES["Portrait & People"])
+        fidelity_config = FIDELITY_MODES.get(fidelity, FIDELITY_MODES["normal"])
 
-        # Extract best patterns from matched cases
-        case_patterns = self._extract_case_patterns(matched_cases or [])
+        # Adjust case usage based on fidelity
+        effective_cases = matched_cases or []
+        if fidelity == "creative":
+            effective_cases = (matched_cases or [])[:1]  # Light reference for creative
 
-        # Build prompt based on approach
-        prompt, methodology = self._compose_prompt(
-            requirements, strategy, analysis, case_patterns, user_lang
+        # Extract best patterns from matched cases (all modes benefit)
+        case_patterns = self._extract_case_patterns(effective_cases)
+
+        # Build Chinese prompt
+        prompt_zh, methodology = self._compose_prompt(
+            requirements, strategy, analysis, case_patterns, "zh", fidelity_config
         )
 
-        # Post-process: inject quality keywords from case patterns
-        prompt = self._inject_quality(prompt, analysis, case_patterns)
+        # Build English prompt
+        prompt_en = ""
+        if bilingual or user_lang == "en":
+            prompt_en, _ = self._compose_prompt(
+                requirements, strategy, analysis, case_patterns, "en", fidelity_config
+            )
 
-        return {
-            "prompt": prompt,
+        # Post-process: inject quality keywords (all modes get quality injections)
+        prompt_zh = self._inject_quality(prompt_zh, analysis, case_patterns, fidelity_config)
+        if prompt_en:
+            prompt_en = self._inject_quality(prompt_en, analysis, case_patterns, fidelity_config)
+
+        result = {
+            "prompt": prompt_zh if user_lang == "zh" else prompt_en,
+            "prompt_zh": prompt_zh if bilingual else "",
+            "prompt_en": prompt_en if bilingual else "",
             "methodology_notes": methodology,
             "approach_used": analysis["approach"],
-            "cases_referenced": [c["id"] for c in (matched_cases or [])[:3]],
-            "quality_injections": self._summarize_injections(analysis, case_patterns),
+            "cases_referenced": [c["id"] for c in effective_cases[:3]],
+            "quality_injections": self._summarize_injections(analysis, case_patterns, fidelity_config),
+            "fidelity_mode": fidelity,
+            "fidelity_label": fidelity_config["label"],
         }
+
+        return result
 
     def _extract_case_patterns(self, cases):
         """Extract reusable patterns from matched cases."""
@@ -456,29 +517,34 @@ class PromptBuilder:
                     patterns["neg_constraints"].append(line.strip())
         return patterns
 
-    def _compose_prompt(self, req, strategy, analysis, patterns, lang):
-        """Core prompt composition logic."""
+    def _compose_prompt(self, req, strategy, analysis, patterns, lang, fidelity_config=None):
+        """Core prompt composition logic with fidelity control."""
+        if fidelity_config is None:
+            fidelity_config = FIDELITY_MODES["normal"]
         methodology = []
 
         # Choose language for prompt
         is_chinese = lang == "zh"
         is_japanese = lang == "ja"
 
+        # All modes use the same strategy branches — fidelity only affects
+        # how text content is handled (strict: verbatim, creative: free interpretation)
+
         # Strategy selection
         if strategy["approach"] == "json_structured" and req.get("complex_layout"):
-            prompt = self._build_json_prompt(req, strategy, patterns)
+            prompt = self._build_json_prompt(req, strategy, patterns, lang)
             methodology.append("Using JSON-structured approach for complex layout control")
         elif strategy["approach"] == "detailed_commercial":
-            prompt = self._build_commercial_prompt(req, strategy, patterns)
+            prompt = self._build_commercial_prompt(req, strategy, patterns, lang)
             methodology.append("Using detailed commercial photography approach with precise parameter control")
         elif strategy["approach"] == "photography_spec":
-            prompt = self._build_photography_prompt(req, strategy, patterns)
+            prompt = self._build_photography_prompt(req, strategy, patterns, lang)
             methodology.append("Using professional photography specification approach")
         elif strategy["approach"] == "platform_specific":
-            prompt = self._build_platform_prompt(req, strategy, patterns)
+            prompt = self._build_platform_prompt(req, strategy, patterns, lang)
             methodology.append("Using platform-specific UI/UX prompt structure")
         else:
-            prompt = self._build_natural_prompt(req, strategy, patterns)
+            prompt = self._build_natural_prompt(req, strategy, patterns, lang)
             methodology.append("Using natural language approach with quality injections")
 
         # Reference image handling
@@ -497,10 +563,42 @@ class PromptBuilder:
         methodology.append(f"Category strategy: {req.get('category', 'General')}")
         methodology.append(f"Approach: {analysis['approach']}")
 
+        # Apply fidelity wrapper (strict text accuracy / creative freedom / normal = as-is)
+        if fidelity_config:
+            prompt = self._apply_fidelity_wrapper(prompt, fidelity_config, lang)
+            if fidelity_config["creativity"] <= 0.3:
+                methodology.append(f"[{fidelity_config['label']}] 文字严格遵循原文，视觉效果正常优化")
+            elif fidelity_config["creativity"] >= 1.0:
+                methodology.append(f"[{fidelity_config['label']}] 最大化艺术创作自由度")
+
         return prompt, methodology
 
-    def _build_natural_prompt(self, req, strategy, patterns):
+    def _apply_fidelity_wrapper(self, prompt, fidelity_config, lang):
+        """Wrap prompt with fidelity-specific instructions.
+
+        Strict: enforce text accuracy, visual quality still optimized.
+        Creative: encourage artistic freedom and exploration.
+        Normal: no additional wrapper (prompt as-is).
+        """
+        is_chinese = lang == "zh"
+
+        if fidelity_config["creativity"] <= 0.3:  # strict
+            if is_chinese:
+                return prompt + "\n\n【重要】上述指定的所有文字内容必须原样呈现，不得修改、改写或编造任何文字。光影、构图、画质等视觉效果请充分优化。"
+            else:
+                return prompt + "\n\nIMPORTANT: All text/copy specified above must appear exactly as written. Do not modify, paraphrase, or invent any text content. Visual quality (lighting, composition, effects) should be fully optimized."
+
+        if fidelity_config["creativity"] >= 1.0:  # creative
+            if is_chinese:
+                return prompt + "\n\n请充分发挥艺术创造力，大胆运用戏剧性光影、非常规构图和大胆配色。可以自由联想和增强视觉元素，突破常规，追求独特的艺术表达。"
+            else:
+                return prompt + "\n\nFeel free to creatively interpret and enhance all visual elements. Push artistic boundaries with dramatic lighting, unexpected compositions, and bold color choices. Prioritize unique artistic expression over literal accuracy."
+
+        return prompt  # normal: no wrapper
+
+    def _build_natural_prompt(self, req, strategy, patterns, lang="en"):
         """Build a natural language prompt."""
+        is_chinese = lang == "zh"
         parts = []
 
         # Task definition
@@ -508,49 +606,82 @@ class PromptBuilder:
         style = req.get("style", "")
         purpose = req.get("purpose", "")
 
-        if purpose:
-            parts.append(f"Create a {style} {purpose} featuring {subject}.")
+        if is_chinese:
+            if purpose:
+                parts.append(f"生成一张{style}风格的{purpose}，主题为{subject}。")
+            else:
+                parts.append(f"生成一张{style}风格的{subject}图像。")
+
+            if req.get("mood"):
+                parts.append(f"氛围：{req['mood']}。")
+
+            if strategy.get("photo_injection"):
+                parts.append("灯光：专业摄影棚灯光，柔和散射照明。")
+                parts.append("相机：高分辨率商业摄影，清晰对焦，适当浅景深。")
+
+            if req.get("ratio"):
+                parts.append(f"画幅比例：{req['ratio']}。")
+            if req.get("composition"):
+                parts.append(f"构图：{req['composition']}。")
+
+            if req.get("text_content"):
+                parts.append(f"需要包含的文字（务必清晰可读）：{req['text_content']}。")
+
+            if req.get("colors"):
+                parts.append(f"色彩方案：{req['colors']}。")
+
+            if req.get("special_elements"):
+                parts.append(f"附加元素：{req['special_elements']}。")
+
+            negs = list(strategy.get("neg_defaults", []))
+            if req.get("constraints"):
+                negs.extend(req["constraints"].split(","))
+            if negs:
+                parts.append("避免：" + "、".join(negs[:5]) + "。")
         else:
-            parts.append(f"Create a {style} image of {subject}.")
+            if purpose:
+                parts.append(f"Create a {style} {purpose} featuring {subject}.")
+            else:
+                parts.append(f"Create a {style} image of {subject}.")
 
-        # Style specifics
-        parts.append(f"Visual style: {style}.")
-        if req.get("mood"):
-            parts.append(f"Atmosphere: {req['mood']}.")
+            # Style specifics
+            parts.append(f"Visual style: {style}.")
+            if req.get("mood"):
+                parts.append(f"Atmosphere: {req['mood']}.")
 
-        # Technical details
-        if strategy.get("photo_injection"):
-            parts.append("Lighting: professional studio lighting with soft diffused illumination.")
-            parts.append("Camera: high-resolution commercial photography, sharp focus, shallow depth of field where appropriate.")
+            # Technical details
+            if strategy.get("photo_injection"):
+                parts.append("Lighting: professional studio lighting with soft diffused illumination.")
+                parts.append("Camera: high-resolution commercial photography, sharp focus, shallow depth of field where appropriate.")
 
-        # Composition
-        if req.get("ratio"):
-            parts.append(f"Aspect ratio: {req['ratio']}.")
-        if req.get("composition"):
-            parts.append(f"Composition: {req['composition']}.")
+            # Composition
+            if req.get("ratio"):
+                parts.append(f"Aspect ratio: {req['ratio']}.")
+            if req.get("composition"):
+                parts.append(f"Composition: {req['composition']}.")
 
-        # Text requirements
-        if req.get("text_content"):
-            parts.append(f"Text to include (must be clearly readable): {req['text_content']}.")
+            # Text requirements
+            if req.get("text_content"):
+                parts.append(f"Text to include (must be clearly readable): {req['text_content']}.")
 
-        # Color
-        if req.get("colors"):
-            parts.append(f"Color palette: {req['colors']}.")
+            # Color
+            if req.get("colors"):
+                parts.append(f"Color palette: {req['colors']}.")
 
-        # Special elements
-        if req.get("special_elements"):
-            parts.append(f"Additional elements: {req['special_elements']}.")
+            # Special elements
+            if req.get("special_elements"):
+                parts.append(f"Additional elements: {req['special_elements']}.")
 
-        # Negative constraints
-        negs = list(strategy.get("neg_defaults", []))
-        if req.get("constraints"):
-            negs.extend(req["constraints"].split(","))
-        if negs:
-            parts.append("Avoid: " + ", ".join(negs[:5]) + ".")
+            # Negative constraints
+            negs = list(strategy.get("neg_defaults", []))
+            if req.get("constraints"):
+                negs.extend(req["constraints"].split(","))
+            if negs:
+                parts.append("Avoid: " + ", ".join(negs[:5]) + ".")
 
         return " ".join(parts)
 
-    def _build_photography_prompt(self, req, strategy, patterns):
+    def _build_photography_prompt(self, req, strategy, patterns, lang="en"):
         """Build a professional photography prompt."""
         subject = req.get("subject", "")
         style = req.get("style", "editorial photography")
@@ -676,28 +807,40 @@ class PromptBuilder:
 
         return " ".join(parts)
 
-    def _inject_quality(self, prompt, analysis, patterns):
+    def _inject_quality(self, prompt, analysis, patterns, fidelity_config=None):
         """Smoothly integrate quality keywords into the prompt flow."""
+        if fidelity_config is None:
+            fidelity_config = FIDELITY_MODES["normal"]
+
+        # Strict mode: no quality injections
+        if fidelity_config["injection_level"] == 0:
+            return prompt
+
         style_key = analysis["style_key"]
         injections = STYLE_INJECTIONS.get(style_key, {})
 
-        # Build a smooth quality suffix that reads naturally
+        # Creative mode: use max injections
+        max_terms = 3 if fidelity_config["injection_level"] >= 2 else 1
+
+        # Build quality suffix respecting fidelity level
         quality_parts = []
 
         if "quality" in injections and injections["quality"]:
-            quality_parts.append(injections["quality"][0])
+            quality_parts.extend(injections["quality"][:max_terms])
 
-        if "camera" in injections and injections["camera"]:
-            quality_parts.append(f"shot on {injections['camera'][0]}")
+        if fidelity_config["injection_level"] >= 2:
+            if "camera" in injections and injections["camera"]:
+                quality_parts.append(f"shot on {injections['camera'][0]}")
+            if "lens" in injections and injections["lens"]:
+                quality_parts.append(f"with {injections['lens'][0]}")
+            if "lighting" in injections and injections["lighting"]:
+                quality_parts.append(f"under {injections['lighting'][0]}")
+            if "composition" in injections and injections["composition"]:
+                quality_parts.append(f"{injections['composition'][0]} composition")
 
-        if "lens" in injections and injections["lens"]:
-            quality_parts.append(f"with {injections['lens'][0]}")
-
-        if "lighting" in injections and injections["lighting"]:
-            quality_parts.append(f"under {injections['lighting'][0]}")
-
-        if "composition" in injections and injections["composition"]:
-            quality_parts.append(f"{injections['composition'][0]} composition")
+        if fidelity_config["injection_level"] == 1:
+            if "camera" in injections and injections["camera"]:
+                quality_parts.append(injections["camera"][0])
 
         if quality_parts:
             # Integrate smoothly: add before negative constraints
@@ -712,13 +855,19 @@ class PromptBuilder:
 
         return prompt.strip()
 
-    def _summarize_injections(self, analysis, patterns):
+    def _summarize_injections(self, analysis, patterns, fidelity_config=None):
         """Summarize what quality injections were applied."""
+        if fidelity_config is None:
+            fidelity_config = FIDELITY_MODES["normal"]
         summary = []
+        if fidelity_config["injection_level"] == 0:
+            return ["[严格模式] 无质量注入，使用用户原文" if True else "[Strict] No quality injections"]
         style_key = analysis["style_key"]
         if style_key in STYLE_INJECTIONS:
+            max_terms = 3 if fidelity_config["injection_level"] >= 2 else 1
             for cat, terms in STYLE_INJECTIONS[style_key].items():
-                summary.append(f"{cat}: {terms[0]}")
+                for t in terms[:max_terms]:
+                    summary.append(f"{cat}: {t}")
         return summary
 
 
@@ -745,8 +894,15 @@ def main():
     parser.add_argument("--complex", action="store_true", help="Use JSON-structured approach")
     parser.add_argument("--search-limit", type=int, default=3, help="Number of cases to reference")
     parser.add_argument("--lang", default="zh", help="User language (zh/en/ja)")
+    parser.add_argument("--fidelity", default="normal", choices=["strict", "normal", "creative"],
+                        help="Fidelity mode: strict (exact text), normal (case-referenced), creative (max artistic freedom)")
+    parser.add_argument("--bilingual", action="store_true", default=True,
+                        help="Output both Chinese and English versions (default: true)")
+    parser.add_argument("--no-bilingual", action="store_true", help="Disable bilingual output")
     parser.add_argument("--json-output", action="store_true", help="Output as JSON")
     args = parser.parse_args()
+
+    bilingual = not args.no_bilingual
 
     builder = PromptBuilder()
 
@@ -779,29 +935,41 @@ def main():
         }
 
     # Build prompt
-    result = builder.build(requirements, cases, args.lang)
+    result = builder.build(requirements, cases, args.lang, fidelity=args.fidelity, bilingual=bilingual)
 
     if args.json_output:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
+        fidelity_emoji = {"strict": "🔒", "normal": "📋", "creative": "🎨"}
         print("=" * 60)
-        print("🎯 GENERATED PROMPT")
+        print(f"{fidelity_emoji.get(args.fidelity, '📋')} GENERATED PROMPT [{result['fidelity_label']}]")
         print("=" * 60)
-        print(f"\n{result['prompt']}\n")
-        print("=" * 60)
-        print("📚 REFERENCED CASES")
-        print("=" * 60)
-        for case in cases:
-            print(f"  [{case['id']}] {case['title']}")
-            print(f"  Category: {case.get('category', 'N/A')} | Source: {case.get('source', 'N/A')}")
-            preview = case.get('prompt', '')[:150]
-            print(f"  Preview: {preview}...\n")
+
+        if result.get("prompt_zh") and result.get("prompt_en"):
+            print(f"\n--- 🇨🇳 中文版 (for 豆包/国内模型) ---")
+            print(f"{result['prompt_zh']}\n")
+            print(f"--- 🇺🇸 English (for ChatGPT/GPT Image) ---")
+            print(f"{result['prompt_en']}\n")
+        else:
+            print(f"\n{result['prompt']}\n")
+
+        if cases:
+            print("=" * 60)
+            print("📚 REFERENCED CASES")
+            print("=" * 60)
+            for case in cases[:3]:
+                print(f"  [{case['id']}] {case['title']}")
+                print(f"  Category: {case.get('category', 'N/A')} | Source: {case.get('source', 'N/A')}")
+                preview = case.get('prompt', '')[:150]
+                print(f"  Preview: {preview}...\n")
+
         print("=" * 60)
         print("🔬 METHODOLOGY")
         print("=" * 60)
         for note in result['methodology_notes']:
             print(f"  • {note}")
-        print(f"\n  Quality injections: {', '.join(result['quality_injections'])}")
+        print(f"\n  Fidelity: {result['fidelity_mode']} ({result['fidelity_label']})")
+        print(f"  Quality injections: {', '.join(result['quality_injections'])}")
         print(f"  Approach: {result['approach_used']}")
 
 

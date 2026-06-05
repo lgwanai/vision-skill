@@ -1,6 +1,62 @@
 # Infographic & Charts
 
-**61 cases**
+**42 cases**
+---
+
+## [ym-0006] 3D Stone Staircase Evolution Infographic ⭐ 🚀
+
+- Source: youmind | Author: 知识猫图解
+
+[📄 Full case →](ym-0006-3D-Stone-Staircase-Evolution-Infographic.md)
+---
+
+## [ym-0036] Infographic / Edu Visual - Technical Annotation Infographic Style 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0036-Infographic-Edu-Visual-Technical-Annotation-Infographic.md)
+---
+
+## [ym-0040] Infographic / Edu Visual - Annotated Mountain Location Diagram 🚀
+
+- Source: youmind | Author: Jet Inoue｜井上ジェット｜🎞️AI監督・アニメ＆実写
+
+[📄 Full case →](ym-0040-Infographic-Edu-Visual-Annotated-Mountain-Location-Diagr.md)
+---
+
+## [ym-0043] Infographic / Edu Visual - Japanese Salmon Kimchi Recipe Card 🚀
+
+- Source: youmind | Author: Maki@Sunwood AI Labs.
+
+[📄 Full case →](ym-0043-Infographic-Edu-Visual-Japanese-Salmon-Kimchi-Recipe-Car.md)
+---
+
+## [ym-0047] Infographic / Edu Visual - Technical Product Teardown Infographic 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0047-Infographic-Edu-Visual-Technical-Product-Teardown-Infogr.md)
+---
+
+## [ym-0048] Infographic / Edu Visual - Chibi Character Pose Overlay 🚀
+
+- Source: youmind | Author: Anifun AI
+
+[📄 Full case →](ym-0048-Infographic-Edu-Visual-Chibi-Character-Pose-Overlay.md)
+---
+
+## [ff-0215] 西方艺术演进像素博物馆
+
+- Source: freestylefly | Author: @GeekCatX
+
+[📄 Full case →](ff-0215-西方艺术演进像素博物馆.md)
+---
+
+## [ev-0048] Research LIME Drug Design and make a detailed infographic about it
+
+- Source: evolink | Author: WillSpagnoli
+
+[📄 Full case →](ev-0048-Research-LIME-Drug-Design-and-make-a-detailed-infographic-ab.md)
 ---
 
 ## [ff-0469] 导览式科普绘本
@@ -220,13 +276,6 @@
 [📄 Full case →](ff-0179-蒸汽朋克射手座解剖图谱.md)
 ---
 
-## [ff-0171] 信息图可视化设计
-
-- Source: freestylefly | Author: @umesh_ai
-
-[📄 Full case →](ff-0171-信息图可视化设计-2.md)
----
-
 ## [ff-0168] 手写中西药方图片
 
 - Source: freestylefly | Author: @MrLarus
@@ -234,193 +283,11 @@
 [📄 Full case →](ff-0168-手写中西药方图片.md)
 ---
 
-## [ff-0119] 主题海报版式设计 🚀
-
-- Source: freestylefly | Author: @old_pgmrs_will
-
-[📄 Full case →](ff-0119-主题海报版式设计-7.md)
----
-
-## [ff-0102] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @maxescu
-
-[📄 Full case →](ff-0102-信息图可视化设计-4.md)
----
-
-## [ff-0089] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @A9Quant
-
-[📄 Full case →](ff-0089-信息图可视化设计-6.md)
----
-
-## [ff-0087] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @MrLarus
-
-[📄 Full case →](ff-0087-关系图谱信息图.md)
----
-
-## [ff-0086] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @MrLarus
-
-[📄 Full case →](ff-0086-关系图谱信息图-2.md)
----
-
-## [ff-0085] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @MrLarus
-
-[📄 Full case →](ff-0085-关系图谱信息图-3.md)
----
-
-## [ff-0084] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @MrLarus
-
-[📄 Full case →](ff-0084-关系图谱信息图-4.md)
----
-
-## [ff-0077] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @alanlovelq
-
-[📄 Full case →](ff-0077-关系图谱信息图-5.md)
----
-
-## [ff-0076] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @alanlovelq
-
-[📄 Full case →](ff-0076-关系图谱信息图-6.md)
----
-
-## [ff-0075] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @alanlovelq
-
-[📄 Full case →](ff-0075-关系图谱信息图-7.md)
----
-
-## [ff-0074] 关系图谱信息图 🚀
-
-- Source: freestylefly | Author: @alanlovelq
-
-[📄 Full case →](ff-0074-关系图谱信息图-8.md)
----
-
-## [ff-0073] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @hx831126
-
-[📄 Full case →](ff-0073-信息图可视化设计-10.md)
----
-
-## [ff-0072] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @hx831126
-
-[📄 Full case →](ff-0072-信息图可视化设计-11.md)
----
-
 ## [ff-0071] 关系图谱信息图 🚀
 
 - Source: freestylefly | Author: @hx831126
 
-[📄 Full case →](ff-0071-关系图谱信息图-9.md)
----
-
-## [ff-0070] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @hx831126
-
-[📄 Full case →](ff-0070-信息图可视化设计-12.md)
----
-
-## [ff-0069] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @hx831126
-
-[📄 Full case →](ff-0069-信息图可视化设计-13.md)
----
-
-## [ff-0068] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @hx831126
-
-[📄 Full case →](ff-0068-信息图可视化设计-14.md)
----
-
-## [ff-0067] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @hx831126
-
-[📄 Full case →](ff-0067-信息图可视化设计-15.md)
----
-
-## [ff-0066] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @hx831126
-
-[📄 Full case →](ff-0066-信息图可视化设计-16.md)
----
-
-## [ff-0065] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @GeekCatX
-
-[📄 Full case →](ff-0065-信息图可视化设计-17.md)
----
-
-## [ff-0064] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @j_zou93
-
-[📄 Full case →](ff-0064-信息图可视化设计-18.md)
----
-
-## [ff-0055] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @Kurt_Rousey466
-
-[📄 Full case →](ff-0055-信息图可视化设计-19.md)
----
-
-## [ff-0051] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @yyyole
-
-[📄 Full case →](ff-0051-信息图可视化设计-20.md)
----
-
-## [ff-0023] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @GeekCatX
-
-[📄 Full case →](ff-0023-信息图可视化设计-21.md)
----
-
-## [ff-0019] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @yammamon
-
-[📄 Full case →](ff-0019-信息图可视化设计-23.md)
----
-
-## [ff-0014] 信息图可视化设计
-
-- Source: freestylefly | Author: 小红书号Roy_Jay
-
-[📄 Full case →](ff-0014-信息图可视化设计-25.md)
----
-
-## [ff-0013] 信息图可视化设计
-
-- Source: freestylefly | Author: 小红书号94156710894
-
-[📄 Full case →](ff-0013-信息图可视化设计-26.md)
+[📄 Full case →](ff-0071-关系图谱信息图.md)
 ---
 
 ## [ff-0008] 科普百科图

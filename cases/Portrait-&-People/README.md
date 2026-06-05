@@ -1,6 +1,524 @@
 # Portrait & People
 
-**255 cases**
+**193 cases**
+---
+
+## [ym-0005] Anime Martial Arts Battle Illustration ⭐ 🚀
+
+- Source: youmind | Author: たねもみ 2.0 / Tanemomi Ver2.0
+
+[📄 Full case →](ym-0005-Anime-Martial-Arts-Battle-Illustration.md)
+---
+
+## [ym-0001] Profile / Avatar - Mixed Media Chibi Streetwear Portrait 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0001-Profile-Avatar-Mixed-Media-Chibi-Streetwear-Portrait.md)
+---
+
+## [ym-0002] Profile / Avatar - Editorial Vertical Portrait with Black Mist 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0002-Profile-Avatar-Editorial-Vertical-Portrait-with-Black-Mi.md)
+---
+
+## [ym-0003] Profile / Avatar - Harajuku Girl Fashion Portrait 🚀
+
+- Source: youmind | Author: 𝐙𝐞𝐧𝐠 💜
+
+[📄 Full case →](ym-0003-Profile-Avatar-Harajuku-Girl-Fashion-Portrait.md)
+---
+
+## [ym-0004] Profile / Avatar - 90s Rebel Anime Headphone Portrait 🚀
+
+- Source: youmind | Author: 自学Ai的鱼头叔叔
+
+[📄 Full case →](ym-0004-Profile-Avatar-90s-Rebel-Anime-Headphone-Portrait.md)
+---
+
+## [ym-0006] Profile / Avatar - Decorated Cheki Anime Portrait 🚀
+
+- Source: youmind | Author: 23Sensei
+
+[📄 Full case →](ym-0006-Profile-Avatar-Decorated-Cheki-Anime-Portrait.md)
+---
+
+## [ym-0007] Profile / Avatar - Nostalgic Cafe Identity Reference Portrait 🚀
+
+- Source: youmind | Author: Shinning
+
+[📄 Full case →](ym-0007-Profile-Avatar-Nostalgic-Cafe-Identity-Reference-Portrai.md)
+---
+
+## [ym-0008] Profile / Avatar - Messy Kitchen Mirror Selfie 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0008-Profile-Avatar-Messy-Kitchen-Mirror-Selfie.md)
+---
+
+## [ym-0010] Profile / Avatar - Neon City Portrait With Face Block 🚀
+
+- Source: youmind | Author: つたや@Pale Algorithm
+
+[📄 Full case →](ym-0010-Profile-Avatar-Neon-City-Portrait-With-Face-Block.md)
+---
+
+## [ym-0011] Profile / Avatar - Anime Girl at Sunset Beach 🚀
+
+- Source: youmind | Author: Risa
+
+[📄 Full case →](ym-0011-Profile-Avatar-Anime-Girl-at-Sunset-Beach.md)
+---
+
+## [ym-0012] Profile / Avatar - Night Car Selfie via iPhone Screen 🚀
+
+- Source: youmind | Author: PhotoGPT
+
+[📄 Full case →](ym-0012-Profile-Avatar-Night-Car-Selfie-via-iPhone-Screen.md)
+---
+
+## [ym-0013] Profile / Avatar - Candid Campus Student Portrait 🚀
+
+- Source: youmind | Author: Johnn
+
+[📄 Full case →](ym-0013-Profile-Avatar-Candid-Campus-Student-Portrait.md)
+---
+
+## [ym-0014] Profile / Avatar - Golden Hour Urban Portrait 🚀
+
+- Source: youmind | Author: Scaling Tech HQ
+
+[📄 Full case →](ym-0014-Profile-Avatar-Golden-Hour-Urban-Portrait.md)
+---
+
+## [ym-0015] Profile / Avatar - Romantic Beach Sunset Couple 🚀
+
+- Source: youmind | Author: Mr. Tariq
+
+[📄 Full case →](ym-0015-Profile-Avatar-Romantic-Beach-Sunset-Couple.md)
+---
+
+## [ym-0017] Profile / Avatar - Golden Hour Beach Couple 🚀
+
+- Source: youmind | Author: Mr. Tariq
+
+[📄 Full case →](ym-0017-Profile-Avatar-Golden-Hour-Beach-Couple.md)
+---
+
+## [ym-0018] Profile / Avatar - Romantic Sunset Beach Couple Portrait 🚀
+
+- Source: youmind | Author: Mr. Tariq
+
+[📄 Full case →](ym-0018-Profile-Avatar-Romantic-Sunset-Beach-Couple-Portrait.md)
+---
+
+## [ym-0019] Profile / Avatar - Cinematic Chiaroscuro Portrait 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0019-Profile-Avatar-Cinematic-Chiaroscuro-Portrait.md)
+---
+
+## [ym-0020] Profile / Avatar - Korean Beauty Lifestyle Portrait 🚀
+
+- Source: youmind | Author: Zephyra Leigh
+
+[📄 Full case →](ym-0020-Profile-Avatar-Korean-Beauty-Lifestyle-Portrait.md)
+---
+
+## [ym-0021] Social Media Post - 3D CG Oriental Fantasy Portrait
+
+- Source: youmind | Author: 李岳
+
+[📄 Full case →](ym-0021-Social-Media-Post-3D-CG-Oriental-Fantasy-Portrait.md)
+---
+
+## [ym-0022] Social Media Post - Retro CCD Digital Camera Snapshot 🚀
+
+- Source: youmind | Author: 骑司Chase
+
+[📄 Full case →](ym-0022-Social-Media-Post-Retro-CCD-Digital-Camera-Snapshot.md)
+---
+
+## [ym-0024] Social Media Post - Simple Portrait of a Smiling Man with Whiskey 🚀
+
+- Source: youmind | Author: G.Goza
+
+[📄 Full case →](ym-0024-Social-Media-Post-Simple-Portrait-of-a-Smiling-Man-with-Wh.md)
+---
+
+## [ym-0025] Social Media Post - Rainy Hydrangea Street Portrait 🚀
+
+- Source: youmind | Author: susumu_Mind
+
+[📄 Full case →](ym-0025-Social-Media-Post-Rainy-Hydrangea-Street-Portrait.md)
+---
+
+## [ym-0027] Social Media Post - Censored Realistic Spa Portrait 🚀
+
+- Source: youmind | Author: ☄️
+
+[📄 Full case →](ym-0027-Social-Media-Post-Censored-Realistic-Spa-Portrait.md)
+---
+
+## [ym-0028] Social Media Post - Classical Suzhou Garden Interior Portrait 🚀
+
+- Source: youmind | Author: ToroJushiAi
+
+[📄 Full case →](ym-0028-Social-Media-Post-Classical-Suzhou-Garden-Interior-Portrai.md)
+---
+
+## [ym-0030] Social Media Post - Under Glass Floor Perspective Shot 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0030-Social-Media-Post-Under-Glass-Floor-Perspective-Shot.md)
+---
+
+## [ym-0033] Social Media Post - Lavender Vogue Fashion Mood Board 🚀
+
+- Source: youmind | Author: Cherry 2.O
+
+[📄 Full case →](ym-0033-Social-Media-Post-Lavender-Vogue-Fashion-Mood-Board.md)
+---
+
+## [ym-0034] Social Media Post - East Asian Woman Underground Film Aesthetic 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0034-Social-Media-Post-East-Asian-Woman-Underground-Film-Aesthe.md)
+---
+
+## [ym-0035] Social Media Post - Flash Nightlife Fashion Portrait 🚀
+
+- Source: youmind | Author: AI Girl's Photo Studio
+
+[📄 Full case →](ym-0035-Social-Media-Post-Flash-Nightlife-Fashion-Portrait.md)
+---
+
+## [ym-0039] Infographic / Edu Visual - Japanese GPT Image 2 Swimsuit Report Poster 🚀
+
+- Source: youmind | Author: 千田結穂（せんだゆいほ）
+
+[📄 Full case →](ym-0039-Infographic-Edu-Visual-Japanese-GPT-Image-2-Swimsuit-Rep.md)
+---
+
+## [ym-0041] Infographic / Edu Visual - Manus GPT Image 2.0 Comparison Slide 🚀
+
+- Source: youmind | Author: 石丸真平 | AIの人《本当に仕事で使えるAIを発信》
+
+[📄 Full case →](ym-0041-Infographic-Edu-Visual-Manus-GPT-Image-2.0-Comparison-Sl.md)
+---
+
+## [ym-0049] Infographic / Edu Visual - Six-Stage Life Progression Portrait 🚀
+
+- Source: youmind | Author: 路飞 🏴‍☠️ AI 研究员🧐
+
+[📄 Full case →](ym-0049-Infographic-Edu-Visual-Six-Stage-Life-Progression-Portra.md)
+---
+
+## [ym-0050] Infographic / Edu Visual - Pastel Height Difference Best Friends 🚀
+
+- Source: youmind | Author: CapCut.Japan
+
+[📄 Full case →](ym-0050-Infographic-Edu-Visual-Pastel-Height-Difference-Best-Fri.md)
+---
+
+## [ym-0052] YouTube Thumbnail - Japanese Lawson Milk Can Thumbnail 🚀
+
+- Source: youmind | Author: 癒色えも(イシキ•エモ)
+
+[📄 Full case →](ym-0052-YouTube-Thumbnail-Japanese-Lawson-Milk-Can-Thumbnail.md)
+---
+
+## [ym-0054] YouTube Thumbnail - GPT Image 2.0 Japanese Thumbnail 🚀
+
+- Source: youmind | Author: たつみん∣AIで仕組化するPdM
+
+[📄 Full case →](ym-0054-YouTube-Thumbnail-GPT-Image-2.0-Japanese-Thumbnail.md)
+---
+
+## [ym-0056] YouTube Thumbnail - Vibrant High-Contrast Digital Collage 🚀
+
+- Source: youmind | Author: Avelyrah
+
+[📄 Full case →](ym-0056-YouTube-Thumbnail-Vibrant-High-Contrast-Digital-Collage.md)
+---
+
+## [ym-0057] YouTube Thumbnail - Anime Protagonist and Companion Generator 🚀
+
+- Source: youmind | Author: Eris Create Lab
+
+[📄 Full case →](ym-0057-YouTube-Thumbnail-Anime-Protagonist-and-Companion-Generato.md)
+---
+
+## [ym-0058] YouTube Thumbnail - Futuristic Cyberpunk Creative Leader Poster 🚀
+
+- Source: youmind | Author: Zeeshan
+
+[📄 Full case →](ym-0058-YouTube-Thumbnail-Futuristic-Cyberpunk-Creative-Leader-Pos.md)
+---
+
+## [ym-0059] YouTube Thumbnail - Miniature Set Style Portrait 🚀
+
+- Source: youmind | Author: Dilshad Hussain
+
+[📄 Full case →](ym-0059-YouTube-Thumbnail-Miniature-Set-Style-Portrait.md)
+---
+
+## [ym-0067] YouTube Thumbnail - Canyon Train Action Hero 🚀
+
+- Source: youmind | Author: Dilshad Hussain
+
+[📄 Full case →](ym-0067-YouTube-Thumbnail-Canyon-Train-Action-Hero.md)
+---
+
+## [ym-0068] YouTube Thumbnail - Stadium Crowd Sports Broadcast Portrait 🚀
+
+- Source: youmind | Author: Sadia
+
+[📄 Full case →](ym-0068-YouTube-Thumbnail-Stadium-Crowd-Sports-Broadcast-Portrait.md)
+---
+
+## [ym-0072] Comic / Storyboard - Dark Ink Noir Portrait 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0072-Comic-Storyboard-Dark-Ink-Noir-Portrait.md)
+---
+
+## [ym-0080] Comic / Storyboard - Wa-Modern Floral Idol Dress Sheet 🚀
+
+- Source: youmind | Author: 夜白（凡庸）
+
+[📄 Full case →](ym-0080-Comic-Storyboard-Wa-Modern-Floral-Idol-Dress-Sheet.md)
+---
+
+## [ym-0081] Comic / Storyboard - Dark Rose Goddess Sketchbook Collage 🚀
+
+- Source: youmind | Author: 沙耶-saya-
+
+[📄 Full case →](ym-0081-Comic-Storyboard-Dark-Rose-Goddess-Sketchbook-Collage.md)
+---
+
+## [ym-0083] Comic / Storyboard - Angelic Android Over Land Aircraft Carrier 🚀
+
+- Source: youmind | Author: さとー
+
+[📄 Full case →](ym-0083-Comic-Storyboard-Angelic-Android-Over-Land-Aircraft-Carr.md)
+---
+
+## [ym-0089] Comic / Storyboard - Retro Anime Rooftop Lunch Scene 🚀
+
+- Source: youmind | Author: こば@AIBridge Lab
+
+[📄 Full case →](ym-0089-Comic-Storyboard-Retro-Anime-Rooftop-Lunch-Scene.md)
+---
+
+## [ym-0092] Product Marketing - Fictional Japanese Stamp on Postcard 🚀
+
+- Source: youmind | Author: カーブミラー
+
+[📄 Full case →](ym-0092-Product-Marketing-Fictional-Japanese-Stamp-on-Postcard.md)
+---
+
+## [ym-0098] Product Marketing - Summer Citrus Soda Advertisement 🚀
+
+- Source: youmind | Author: PromptLab
+
+[📄 Full case →](ym-0098-Product-Marketing-Summer-Citrus-Soda-Advertisement.md)
+---
+
+## [ym-0099] Product Marketing - Anime Character 777 Slot Machine 🚀
+
+- Source: youmind | Author: のぞむ＊AIイラスト
+
+[📄 Full case →](ym-0099-Product-Marketing-Anime-Character-777-Slot-Machine.md)
+---
+
+## [ym-0102] Product Marketing - 3D Puffy Resin Character Sticker Sheet 🚀
+
+- Source: youmind | Author: 琴舞 - Kotomai project -
+
+[📄 Full case →](ym-0102-Product-Marketing-3D-Puffy-Resin-Character-Sticker-Sheet.md)
+---
+
+## [ym-0103] Product Marketing - Minimalist Editorial Fashion Collage 🚀
+
+- Source: youmind | Author: Noor
+
+[📄 Full case →](ym-0103-Product-Marketing-Minimalist-Editorial-Fashion-Collage.md)
+---
+
+## [ym-0104] Product Marketing - Artistic Mural Gallery Portrait 🚀
+
+- Source: youmind | Author: HER19845
+
+[📄 Full case →](ym-0104-Product-Marketing-Artistic-Mural-Gallery-Portrait.md)
+---
+
+## [ym-0119] E-commerce Main Image - Oversized Pringles Fashion Ad 🚀
+
+- Source: youmind | Author: Amira Zairi
+
+[📄 Full case →](ym-0119-E-commerce-Main-Image-Oversized-Pringles-Fashion-Ad.md)
+---
+
+## [ff-0309] 创意树叶拼贴构成的角色画像
+
+- Source: freestylefly | Author: @meng_dagg695
+
+[📄 Full case →](ff-0309-创意树叶拼贴构成的角色画像.md)
+---
+
+## [ff-0302] 九位大师的机械键盘设计图鉴
+
+- Source: freestylefly | Author: @TanShilong
+
+[📄 Full case →](ff-0302-九位大师的机械键盘设计图鉴.md)
+---
+
+## [ff-0290] 古风诗人镭射典藏卡牌
+
+- Source: freestylefly | Author: @TanShilong
+
+[📄 Full case →](ff-0290-古风诗人镭射典藏卡牌.md)
+---
+
+## [ff-0241] 关键人物关系图谱
+
+- Source: freestylefly | Author: @yihui_indie
+
+[📄 Full case →](ff-0241-关键人物关系图谱.md)
+---
+
+## [ff-0173] 银河繁星点缀的冰蓝襦裙
+
+- Source: freestylefly | Author: @fdtreesky
+
+[📄 Full case →](ff-0173-银河繁星点缀的冰蓝襦裙.md)
+---
+
+## [ff-0080] 图像生成案例图
+
+- Source: freestylefly | Author: @WOZ1Tx2JZ3kCeBj
+
+[📄 Full case →](ff-0080-图像生成案例图.md)
+---
+
+## [ev-0054] Su Daji Ancient-Style Glamour Portrait
+
+- Source: evolink | Author: nidiedeba
+
+[📄 Full case →](ev-0054-Su-Daji-Ancient-Style-Glamour-Portrait.md)
+---
+
+## [ev-0058] Vertical Wuxia Heroine Portrait
+
+- Source: evolink | Author: CoderDaMing
+
+[📄 Full case →](ev-0058-Vertical-Wuxia-Heroine-Portrait.md)
+---
+
+## [ev-0059] Realistic Guanyin Portrait from Buddhist Texts
+
+- Source: evolink | Author: Zhaoge01
+
+[📄 Full case →](ev-0059-Realistic-Guanyin-Portrait-from-Buddhist-Texts.md)
+---
+
+## [ev-0061] Historical Yang Guifei Realistic Portrait
+
+- Source: evolink | Author: Zhaoge01
+
+[📄 Full case →](ev-0061-Historical-Yang-Guifei-Realistic-Portrait.md)
+---
+
+## [ev-0063] Tushan Yaya Fantasy Glamour Portrait
+
+- Source: evolink | Author: sdjn_wgc
+
+[📄 Full case →](ev-0063-Tushan-Yaya-Fantasy-Glamour-Portrait.md)
+---
+
+## [ev-0065] Eastern Fantasy Female Half-Portrait
+
+- Source: evolink | Author: liyue_ai
+
+[📄 Full case →](ev-0065-Eastern-Fantasy-Female-Half-Portrait.md)
+---
+
+## [ev-0066] Vertical Artistic Portrait of a Young Eastern Woman
+
+- Source: evolink | Author: zhiyangzhu22222
+
+[📄 Full case →](ev-0066-Vertical-Artistic-Portrait-of-a-Young-Eastern-Woman.md)
+---
+
+## [ev-0071] Anime Crowd POV Comparison 🚀
+
+- Source: evolink | Author: chesnyfcb
+
+[📄 Full case →](ev-0071-Anime-Crowd-POV-Comparison.md)
+---
+
+## [ev-0072] Neon AI Thumbnail Comparison 🚀
+
+- Source: evolink | Author: MoveHiro1219
+
+[📄 Full case →](ev-0072-Neon-AI-Thumbnail-Comparison.md)
+---
+
+## [ev-0075] Tokyo DisneySea Front-Row Battle UI
+
+- Source: evolink | Author: mikko_20100518
+
+[📄 Full case →](ev-0075-Tokyo-DisneySea-Front-Row-Battle-UI.md)
+---
+
+## [ev-0077] Printable Paint by Numbers
+
+- Source: evolink | Author: TheRoaringToady
+
+[📄 Full case →](ev-0077-Printable-Paint-by-Numbers.md)
+---
+
+## [ev-0078] Modern Mafia Boss Portrait
+
+- Source: evolink | Author: john_my07
+
+[📄 Full case →](ev-0078-Modern-Mafia-Boss-Portrait.md)
+---
+
+## [ev-0079] Cozy Scrapbook Mini Alter Egos
+
+- Source: evolink | Author: gold_force_guri
+
+[📄 Full case →](ev-0079-Cozy-Scrapbook-Mini-Alter-Egos.md)
+---
+
+## [ev-0081] Apartment Drama Animation Storyboard Sheet
+
+- Source: evolink | Author: CurieuxExplorer
+
+[📄 Full case →](ev-0081-Apartment-Drama-Animation-Storyboard-Sheet.md)
+---
+
+## [ev-0085] Sourdough Baker Storyboard
+
+- Source: evolink | Author: TechieBySA
+
+[📄 Full case →](ev-0085-Sourdough-Baker-Storyboard.md)
+---
+
+## [ev-0087] Pancake Dad Storyboard
+
+- Source: evolink | Author: TechieBySA
+
+[📄 Full case →](ev-0087-Pancake-Dad-Storyboard.md)
 ---
 
 ## [ff-0480] 粉丝速写本角色页
@@ -101,20 +619,6 @@
 [📄 Full case →](ff-0306-官方角色设定资料卡.md)
 ---
 
-## [ff-0271] 人物角色设定图
-
-- Source: freestylefly | Author: @tsubaki_ew
-
-[📄 Full case →](ff-0271-人物角色设定图.md)
----
-
-## [ff-0270] 信息图可视化设计
-
-- Source: freestylefly | Author: \[OpenNana]\(]\(<https://x.com/Toshi_nyaruo_AI/status/2045025277538107420>)
-
-[📄 Full case →](ff-0270-信息图可视化设计.md)
----
-
 ## [ff-0263] 唯美二次元角色介绍网页
 
 - Source: freestylefly | Author: @09lyco
@@ -127,41 +631,6 @@
 - Source: freestylefly | Author: @Kashiko_AIart
 
 [📄 Full case →](ff-0212-专业设计师打造角色写真集.md)
----
-
-## [ff-0162] 人物角色设定图 🚀
-
-- Source: freestylefly | Author: @nicdunz
-
-[📄 Full case →](ff-0162-人物角色设定图-2.md)
----
-
-## [ff-0123] 插画艺术创作图 🚀
-
-- Source: freestylefly | Author: @Luvune
-
-[📄 Full case →](ff-0123-插画艺术创作图.md)
----
-
-## [ff-0041] 插画艺术风格创作 🚀
-
-- Source: freestylefly | Author: @wtry1102
-
-[📄 Full case →](ff-0041-插画艺术风格创作-4.md)
----
-
-## [ff-0027] 人物角色设定图 🚀
-
-- Source: freestylefly | Author: @anemone_sd
-
-[📄 Full case →](ff-0027-人物角色设定图-5.md)
----
-
-## [ff-0025] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @nicdunz
-
-[📄 Full case →](ff-0025-综合应用场景图-12.md)
 ---
 
 ## [ev-0001] Convenience Store Neon Portrait
@@ -281,13 +750,6 @@
 - Source: evolink | Author: BubbleBrain
 
 [📄 Full case →](ev-0017-Fujifilm-Couple-Portrait.md)
----
-
-## [ev-0018] AI Self-Perception Portrait
-
-- Source: evolink | Author: 80vul
-
-[📄 Full case →](ev-0018-AI-Self-Perception-Portrait.md)
 ---
 
 ## [ev-0019] Create the most realistic front page design of a vintage newspaper featuring ...
@@ -640,363 +1102,6 @@
 [📄 Full case →](ev-0118-Cinematic-Stormy-Seaside-Portrait.md)
 ---
 
-## [ev-0119] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0119--100.md)
----
-
-## [ev-0120] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0120--101.md)
----
-
-## [ev-0121] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0121--102.md)
----
-
-## [ev-0122] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0122--103.md)
----
-
-## [ev-0123] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0123--104.md)
----
-
-## [ev-0124] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0124--105.md)
----
-
-## [ev-0125] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0125--106.md)
----
-
-## [ev-0126] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0126--107.md)
----
-
-## [ev-0127] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0127--108.md)
----
-
-## [ev-0128] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0128--109.md)
----
-
-## [ev-0129] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0129--110.md)
----
-
-## [ev-0130] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0130--111.md)
----
-
-## [ev-0131] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0131--112.md)
----
-
-## [ev-0132] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0132--113.md)
----
-
-## [ev-0133] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0133--114.md)
----
-
-## [ev-0134] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0134--115.md)
----
-
-## [ev-0135] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0135--116.md)
----
-
-## [ev-0136] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0136--117.md)
----
-
-## [ev-0137] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0137--118.md)
----
-
-## [ev-0138] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0138--119.md)
----
-
-## [ev-0139] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0139--120.md)
----
-
-## [ev-0140] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0140--121.md)
----
-
-## [ev-0141] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0141--122.md)
----
-
-## [ev-0142] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0142--123.md)
----
-
-## [ev-0143] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0143--124.md)
----
-
-## [ev-0144] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0144--125.md)
----
-
-## [ev-0145] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0145--126.md)
----
-
-## [ev-0146] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0146--127.md)
----
-
-## [ev-0147] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0147--128.md)
----
-
-## [ev-0148] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0148--129.md)
----
-
-## [ev-0149] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0149--130.md)
----
-
-## [ev-0150] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0150--131.md)
----
-
-## [ev-0151] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0151--132.md)
----
-
-## [ev-0152] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0152--133.md)
----
-
-## [ev-0153] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0153--134.md)
----
-
-## [ev-0154] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0154--135.md)
----
-
-## [ev-0155] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0155--136.md)
----
-
-## [ev-0156] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0156--137.md)
----
-
-## [ev-0157] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0157--138.md)
----
-
-## [ev-0158] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0158--139.md)
----
-
-## [ev-0159] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0159--140.md)
----
-
-## [ev-0160] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0160--141.md)
----
-
-## [ev-0161] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0161--142.md)
----
-
-## [ev-0162] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0162--143.md)
----
-
-## [ev-0163] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0163--144.md)
----
-
-## [ev-0164] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0164--145.md)
----
-
-## [ev-0165] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0165--146.md)
----
-
-## [ev-0166] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0166--147.md)
----
-
-## [ev-0167] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0167--148.md)
----
-
-## [ev-0168] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0168--149.md)
----
-
-## [ev-0169] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0169--150.md)
----
-
 ## [ev-0170] Wimbledon Broadcast Crowd Shot
 
 - Source: evolink | Author: Mavericks_Prod
@@ -1088,13 +1193,6 @@
 [📄 Full case →](ev-0182-Monochrome-Streetwear-Editorial.md)
 ---
 
-## [ev-0183] Y2K Streetwear Sticker Poster
-
-- Source: evolink | Author: Shinning1010
-
-[📄 Full case →](ev-0183-Y2K-Streetwear-Sticker-Poster.md)
----
-
 ## [ev-0184] Digicam LCD Nostalgia Shot
 
 - Source: evolink | Author: Ciri_ai
@@ -1123,13 +1221,6 @@
 [📄 Full case →](ev-0187-Fashion-Collage-Multi-Style-Portrait.md)
 ---
 
-## [ev-0188] Busan Travel Journal Illustration
-
-- Source: evolink | Author: Sairah_0
-
-[📄 Full case →](ev-0188-Busan-Travel-Journal-Illustration-2.md)
----
-
 ## [ev-0189] Cinematic Volleyball Sports Portrait
 
 - Source: evolink | Author: meng_dagg695
@@ -1142,13 +1233,6 @@
 - Source: evolink | Author: iamsofiaijaz
 
 [📄 Full case →](ev-0190-3D-Designer-Toy-Portrait.md)
----
-
-## [ev-0191] Dark Silhouette Rim-Light Portrait
-
-- Source: evolink | Author: XSydneyFan
-
-[📄 Full case →](ev-0191-Dark-Silhouette-Rim-Light-Portrait.md)
 ---
 
 ## [ev-0192] Cozy Bedroom Korean Girl Portrait
@@ -1170,510 +1254,6 @@
 - Source: evolink | Author: MrDasOnX
 
 [📄 Full case →](ev-0194-Woman-in-Crystal-Perfume-Bottle.md)
----
-
-## [ev-0195] Summer Campus Tesla Lifestyle Poster
-
-- Source: evolink | Author: Shinning1010
-
-[📄 Full case →](ev-0195-Summer-Campus-Tesla-Lifestyle-Poster.md)
----
-
-## [ev-0196] Bubble-Tea Shop Action Portrait
-
-- Source: evolink | Author: heyfatema
-
-[📄 Full case →](ev-0196-Bubble-Tea-Shop-Action-Portrait.md)
----
-
-## [ev-0197] Night Outdoor Portrait
-
-- Source: evolink | Author: chatgptpaglu
-
-[📄 Full case →](ev-0197-Night-Outdoor-Portrait.md)
----
-
-## [ev-0198] Fashion Blueprint Editorial Sheet
-
-- Source: evolink | Author: ZephyraLeigh
-
-[📄 Full case →](ev-0198-Fashion-Blueprint-Editorial-Sheet.md)
----
-
-## [ev-0199] Joyful Street Portrait with Drink
-
-- Source: evolink | Author: rovvmut_
-
-[📄 Full case →](ev-0199-Joyful-Street-Portrait-with-Drink.md)
----
-
-## [ev-0200] Portrait Collage Film Strip Poster
-
-- Source: evolink | Author: robertsmith_ai
-
-[📄 Full case →](ev-0200-Portrait-Collage-Film-Strip-Poster.md)
----
-
-## [ev-0201] Reference-Based Portrait Consistency
-
-- Source: evolink | Author: mehvishs25
-
-[📄 Full case →](ev-0201-Reference-Based-Portrait-Consistency.md)
----
-
-## [ev-0202] London Fashion Street Portrait
-
-- Source: evolink | Author: ShamiWeb3
-
-[📄 Full case →](ev-0202-London-Fashion-Street-Portrait.md)
----
-
-## [ev-0203] Travel Selfie Portrait Reference
-
-- Source: evolink | Author: linaa_ai
-
-[📄 Full case →](ev-0203-Travel-Selfie-Portrait-Reference.md)
----
-
-## [ev-0204] Ultra-Realistic Phone-Style Portrait
-
-- Source: evolink | Author: AiwithZohaib
-
-[📄 Full case →](ev-0204-Ultra-Realistic-Phone-Style-Portrait.md)
----
-
-## [ev-0205] Woodcut Engraving Portrait Style
-
-- Source: evolink | Author: zulkarnaimx
-
-[📄 Full case →](ev-0205-Woodcut-Engraving-Portrait-Style.md)
----
-
-## [ev-0206] Pixar 3D Character Design Sheet
-
-- Source: evolink | Author: TechieBySA
-
-[📄 Full case →](ev-0206-Pixar-3D-Character-Design-Sheet-2.md)
----
-
-## [ev-0207] Matcha Goddess Beauty Portrait
-
-- Source: evolink | Author: NyaiiBubu
-
-[📄 Full case →](ev-0207-Matcha-Goddess-Beauty-Portrait.md)
----
-
-## [ev-0208] Vintage Camera LCD Screen Shot
-
-- Source: evolink | Author: ZaraElira4
-
-[📄 Full case →](ev-0208-Vintage-Camera-LCD-Screen-Shot.md)
----
-
-## [ev-0209] 写实感人物竖版照片
-
-- Source: evolink | Author: liyue_ai
-
-[📄 Full case →](ev-0209-写实感人物竖版照片.md)
----
-
-## [ev-0210] Y2K Japanese Street Editorial Poster
-
-- Source: evolink | Author: noorlewisx
-
-[📄 Full case →](ev-0210-Y2K-Japanese-Street-Editorial-Poster.md)
----
-
-## [ev-0211] Editorial Male Portrait
-
-- Source: evolink | Author: frametheory058
-
-[📄 Full case →](ev-0211-Editorial-Male-Portrait.md)
----
-
-## [ev-0212] Avant-Garde Tokyo Fashion Zine Poster
-
-- Source: evolink | Author: john_my07
-
-[📄 Full case →](ev-0212-Avant-Garde-Tokyo-Fashion-Zine-Poster.md)
----
-
-## [ev-0213] Miki Style Line Art Portrait
-
-- Source: evolink | Author: ChillaiKalan__
-
-[📄 Full case →](ev-0213-Miki-Style-Line-Art-Portrait.md)
----
-
-## [ev-0214] Korean Beauty Ultra-Realistic Portrait
-
-- Source: evolink | Author: ZephyraLeigh
-
-[📄 Full case →](ev-0214-Korean-Beauty-Ultra-Realistic-Portrait.md)
----
-
-## [ev-0215] Cinematic B&W Portrait
-
-- Source: evolink | Author: Ciri_ai
-
-[📄 Full case →](ev-0215-Cinematic-B&W-Portrait.md)
----
-
-## [ev-0216] Artistic Sketch Portrait Young Man
-
-- Source: evolink | Author: iamsofiaijaz
-
-[📄 Full case →](ev-0216-Artistic-Sketch-Portrait-Young-Man.md)
----
-
-## [ev-0217] NBA Legend Mid-Air Action Poster
-
-- Source: evolink | Author: Taaruk_
-
-[📄 Full case →](ev-0217-NBA-Legend-Mid-Air-Action-Poster.md)
----
-
-## [ev-0218] Korean Beauty Fashion Portrait
-
-- Source: evolink | Author: Sheldon056
-
-[📄 Full case →](ev-0218-Korean-Beauty-Fashion-Portrait.md)
----
-
-## [ev-0219] Cinematic Football Portrait Poster
-
-- Source: evolink | Author: de_mon010
-
-[📄 Full case →](ev-0219-Cinematic-Football-Portrait-Poster.md)
----
-
-## [ev-0220] Switzerland Watercolor Travel Poster
-
-- Source: evolink | Author: Sairah_0
-
-[📄 Full case →](ev-0220-Switzerland-Watercolor-Travel-Poster.md)
----
-
-## [ev-0221] Cinematic Lifestyle Outdoor Portrait
-
-- Source: evolink | Author: aiwithaly
-
-[📄 Full case →](ev-0221-Cinematic-Lifestyle-Outdoor-Portrait.md)
----
-
-## [ev-0222] Luxury Cycling Storyboard Poster
-
-- Source: evolink | Author: Strength04_X
-
-[📄 Full case →](ev-0222-Luxury-Cycling-Storyboard-Poster.md)
----
-
-## [ev-0223] Y2K Japanese Street Collage Poster
-
-- Source: evolink | Author: Kashberg_0
-
-[📄 Full case →](ev-0223-Y2K-Japanese-Street-Collage-Poster.md)
----
-
-## [ev-0224] Cosmic Garden Fantasy Portrait
-
-- Source: evolink | Author: DoctorAmna11
-
-[📄 Full case →](ev-0224-Cosmic-Garden-Fantasy-Portrait.md)
----
-
-## [ev-0225] Streetwear Magazine Cover Portrait
-
-- Source: evolink | Author: harboriis
-
-[📄 Full case →](ev-0225-Streetwear-Magazine-Cover-Portrait.md)
----
-
-## [ev-0226] Cat-Eye Glasses Fashion Portrait
-
-- Source: evolink | Author: ChillaiKalan__
-
-[📄 Full case →](ev-0226-Cat-Eye-Glasses-Fashion-Portrait.md)
----
-
-## [ev-0227] Bold Monochrome Identity Portrait
-
-- Source: evolink | Author: harboriis
-
-[📄 Full case →](ev-0227-Bold-Monochrome-Identity-Portrait.md)
----
-
-## [ev-0228] Clean Tech Advertisement Poster
-
-- Source: evolink | Author: Strength04_X
-
-[📄 Full case →](ev-0228-Clean-Tech-Advertisement-Poster.md)
----
-
-## [ev-0229] Flat Vector Editorial Pattern Illustration
-
-- Source: evolink | Author: Goodmanprotocol
-
-[📄 Full case →](ev-0229-Flat-Vector-Editorial-Pattern-Illustration.md)
----
-
-## [ev-0230] Korean Beauty Identity Portrait
-
-- Source: evolink | Author: linaa_ai
-
-[📄 Full case →](ev-0230-Korean-Beauty-Identity-Portrait.md)
----
-
-## [ev-0231] Hollywood Luxury Anime Fashion Portrait
-
-- Source: evolink | Author: Mind_Boticni
-
-[📄 Full case →](ev-0231-Hollywood-Luxury-Anime-Fashion-Portrait.md)
----
-
-## [ev-0232] Identity Reference Beauty Portrait
-
-- Source: evolink | Author: heyfatema
-
-[📄 Full case →](ev-0232-Identity-Reference-Beauty-Portrait.md)
----
-
-## [ev-0233] Pixel Art Character Portrait
-
-- Source: evolink | Author: oggii_0
-
-[📄 Full case →](ev-0233-Pixel-Art-Character-Portrait.md)
----
-
-## [ev-0234] Negative Prompt Portrait Template
-
-- Source: evolink | Author: ZephyraLeigh
-
-[📄 Full case →](ev-0234-Negative-Prompt-Portrait-Template.md)
----
-
-## [ev-0235] Identity Reference Fashion Portrait
-
-- Source: evolink | Author: mehvishs25
-
-[📄 Full case →](ev-0235-Identity-Reference-Fashion-Portrait.md)
----
-
-## [ev-0236] Pixar 3D Character Design Sheet
-
-- Source: evolink | Author: TechieBySA
-
-[📄 Full case →](ev-0236-Pixar-3D-Character-Design-Sheet-3.md)
----
-
-## [ev-0237] Automotive Design Deconstruction Poster
-
-- Source: evolink | Author: Gdgtify
-
-[📄 Full case →](ev-0237-Automotive-Design-Deconstruction-Poster.md)
----
-
-## [ev-0238] Japanese Graffiti Portrait Poster
-
-- Source: evolink | Author: robertsmith_ai
-
-[📄 Full case →](ev-0238-Japanese-Graffiti-Portrait-Poster.md)
----
-
-## [ev-0239] Brand Identity Portrait
-
-- Source: evolink | Author: Shinning1010
-
-[📄 Full case →](ev-0239-Brand-Identity-Portrait.md)
----
-
-## [ev-0240] Outdoor Lifestyle Open Sky Portrait
-
-- Source: evolink | Author: Shorelyn_
-
-[📄 Full case →](ev-0240-Outdoor-Lifestyle-Open-Sky-Portrait.md)
----
-
-## [ev-0241] 高级男性魅力人像
-
-- Source: evolink | Author: liyue_ai
-
-[📄 Full case →](ev-0241-高级男性魅力人像.md)
----
-
-## [ev-0242] 沙滩场景丰腴人物写真
-
-- Source: evolink | Author: Adam38363368936
-
-[📄 Full case →](ev-0242-沙滩场景丰腴人物写真.md)
----
-
-## [ev-0243] Photorealistic Editorial Seated Portrait
-
-- Source: evolink | Author: zulkarnaimx
-
-[📄 Full case →](ev-0243-Photorealistic-Editorial-Seated-Portrait.md)
----
-
-## [ev-0244] Soft Aesthetic Fashion Magazine Cover
-
-- Source: evolink | Author: SimplyAnnisa
-
-[📄 Full case →](ev-0244-Soft-Aesthetic-Fashion-Magazine-Cover.md)
----
-
-## [ev-0245] Pakistan Miniature World Map Poster
-
-- Source: evolink | Author: AIwithAliya
-
-[📄 Full case →](ev-0245-Pakistan-Miniature-World-Map-Poster.md)
----
-
-## [ev-0246] Japanese Film Aesthetic Airport Portrait
-
-- Source: evolink | Author: BubbleBrain
-
-[📄 Full case →](ev-0246-Japanese-Film-Aesthetic-Airport-Portrait.md)
----
-
-## [ev-0247] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0247--151.md)
----
-
-## [ev-0248] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0248--152.md)
----
-
-## [ev-0249] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0249--153.md)
----
-
-## [ev-0250] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0250--154.md)
----
-
-## [ev-0251] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0251--155.md)
----
-
-## [ev-0252] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0252--156.md)
----
-
-## [ev-0253] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0253--157.md)
----
-
-## [ev-0254] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0254--158.md)
----
-
-## [ev-0255] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0255--159.md)
----
-
-## [ev-0256] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0256--160.md)
----
-
-## [ev-0257] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0257--161.md)
----
-
-## [ev-0258] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0258--162.md)
----
-
-## [ev-0259] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0259--163.md)
----
-
-## [ev-0260] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0260--164.md)
----
-
-## [ev-0261] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0261--165.md)
----
-
-## [ev-0262] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0262--166.md)
----
-
-## [ev-0263] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0263--167.md)
----
-
-## [ev-0264] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0264--168.md)
----
-
-## [ev-0265] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0265--169.md)
----
-
-## [ev-0266] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0266--170.md)
 ---
 
 ## [ev-0001] Anime Snapshot Conversion
@@ -1725,13 +1305,6 @@
 [📄 Full case →](ev-0009-Chaos-Notes-Hidden-Face-Character-Art.md)
 ---
 
-## [ev-0010] Anime Martial Arts Battle Illustration 🚀
-
-- Source: evolink | Author: Tanemomi_Ver2
-
-[📄 Full case →](ev-0010-Anime-Martial-Arts-Battle-Illustration-2.md)
----
-
 ## [ev-0011] GTA 6 in Bangalore Flower Market 🚀
 
 - Source: evolink | Author: ismajc
@@ -1779,11 +1352,4 @@
 - Source: evolink | Author: THX-night
 
 [📄 Full case →](ev-0017-Anime-wallpaper-for-foldable-phone-—-dark-cool-style.md)
----
-
-## [ev-0018] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0018--171.md)
 ---

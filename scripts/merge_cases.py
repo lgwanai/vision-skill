@@ -8,10 +8,11 @@ import json, os, re, shutil
 
 BASE = "/Users/wuliang/workspace/vision-skill"
 CASES_DIR = os.path.join(BASE, "cases")
+DATA_DIR = os.path.join(BASE, "references", "data")
 SOURCES = {
-    "youmind": os.path.join(BASE, "awesome-gpt-image-2-cases"),
-    "freestylefly": os.path.join(BASE, "awesome-gpt-image-2-cases-v2"),
-    "evolink": os.path.join(BASE, "awesome-gpt-image-2-evolink-cases"),
+    "youmind": os.path.join(DATA_DIR, "youmind-all-prompts.json"),
+    "freestylefly": os.path.join(DATA_DIR, "freestylefly-all-cases.json"),
+    "evolink": os.path.join(DATA_DIR, "evolink-all-cases.json"),
 }
 
 # Unified category mapping
@@ -69,10 +70,9 @@ def sf(name):
     return n.strip('-')[:80]
 
 def parse_youmind_cases():
-    """Parse cases from youmind project (markdown files in cases/ subdirs)."""
+    """Parse cases from youmind project JSON data."""
     cases = []
-    src = SOURCES["youmind"]
-    json_path = os.path.join(src, "all-prompts.json")
+    json_path = SOURCES["youmind"]
     if os.path.exists(json_path):
         with open(json_path) as f:
             data = json.load(f)
@@ -97,10 +97,9 @@ def parse_youmind_cases():
     return cases
 
 def parse_freestylefly_cases():
-    """Parse cases from freestylefly project."""
+    """Parse cases from freestylefly project JSON data."""
     cases = []
-    src = SOURCES["freestylefly"]
-    json_path = os.path.join(src, "all-cases.json")
+    json_path = SOURCES["freestylefly"]
     if os.path.exists(json_path):
         with open(json_path) as f:
             data = json.load(f)
@@ -128,10 +127,9 @@ def parse_freestylefly_cases():
     return cases
 
 def parse_evolink_cases():
-    """Parse cases from evolink project."""
+    """Parse cases from evolink project JSON data."""
     cases = []
-    src = SOURCES["evolink"]
-    json_path = os.path.join(src, "all-cases.json")
+    json_path = SOURCES["evolink"]
     if os.path.exists(json_path):
         with open(json_path) as f:
             data = json.load(f)

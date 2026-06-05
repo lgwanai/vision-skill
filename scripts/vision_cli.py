@@ -333,15 +333,68 @@ def main():
     status_parser = subparsers.add_parser("status", help="Check task status")
     status_parser.add_argument("task_id", help="Task ID")
     status_parser.add_argument("--output", help="Save result if completed")
-    
+
+    # ========================================
+    # PPT Sub-commands
+    # ========================================
+    ppt_parser = subparsers.add_parser("ppt", help="PPT generation (see 'ppt --help' for sub-commands)")
+    ppt_sub = ppt_parser.add_subparsers(dest="ppt_command", help="PPT sub-commands")
+
+    # ppt list-styles
+    ppt_list = ppt_sub.add_parser("list-styles", help="List available PPT styles")
+    ppt_list.add_argument("--format", choices=["text", "json"], default="text", help="Output format")
+
+    # ppt plan (md → json)
+    ppt_plan = ppt_sub.add_parser("plan", help="Convert slides_plan.md to slides_plan.json")
+    ppt_plan.add_argument("plan_input", help="Path to slides_plan.md")
+    ppt_plan.add_argument("-o", "--output", help="Output JSON path (default: <input>.json)")
+
+    # ppt generate
+    ppt_gen = ppt_sub.add_parser("generate", help="Generate PPT slides")
+    ppt_gen.add_argument("--plan", required=True, help="Path to slides_plan.json")
+    ppt_gen.add_argument("--style", required=True, help="Style ID (e.g. dark-aurora) or path to style .md file")
+    ppt_gen.add_argument("--slides", help="Only generate specific slides, e.g. '1,3,5'")
+    ppt_gen.add_argument("--output", help="Output directory (default: outputs/<timestamp>)")
+    ppt_gen.add_argument("--concurrency", type=int, default=3, help="Number of concurrent generations (default: 3)")
+    ppt_gen.add_argument("--template-pptx", help="Use PPTX template for cloning (enables template mode)")
+    ppt_gen.add_argument("--template-images", help="Pre-rendered template PNGs directory")
+    ppt_gen.add_argument("--template-strict", action="store_true", help="High-fidelity: use template pages as reference")
+    ppt_gen.add_argument("--auto-review-overlays", action="store_true", help="Vision-based overlay quality review")
+
+    # ppt edit
+    ppt_edit = ppt_sub.add_parser("edit", help="Edit a specific slide")
+    ppt_edit.add_argument("--edit", type=int, required=True, help="Slide number to edit")
+    ppt_edit.add_argument("--session", required=True, help="Session timestamp or path")
+    ppt_edit.add_argument("--element-updates", help='JSON: {"element_id": {"content": "new"}}')
+    ppt_edit.add_argument("--edit-instruction", help="Human-readable edit description")
+    ppt_edit.add_argument("--edit-prompt", help="Full edit prompt override")
+
+    # ppt rollback
+    ppt_rb = ppt_sub.add_parser("rollback", help="Rollback a slide to previous version")
+    ppt_rb.add_argument("--rollback", type=int, required=True, help="Slide number")
+    ppt_rb.add_argument("--session", required=True, help="Session timestamp or path")
+    ppt_rb.add_argument("--to-version", type=int, required=True, help="Target version number")
+
+    # ppt ingest
+    ppt_ing = ppt_sub.add_parser("ingest", help="Ingest external PPTX for editing")
+    ppt_ing.add_argument("--ingest-pptx", required=True, help="Path to external .pptx")
+    ppt_ing.add_argument("--session", help="Custom session name")
+
+    # ppt sessions
+    ppt_sess = ppt_sub.add_parser("sessions", help="List PPT generation sessions")
+    ppt_sess.add_argument("--output", help="Output base directory")
+
     args = parser.parse_args()
-    
+
     if args.command == "recognize":
         handle_recognize(args)
     elif args.command == "generate":
         handle_generate(args)
     elif args.command == "status":
         handle_status(args)
+    elif args.command == "ppt":
+        from ppt_generator import handle_ppt_command
+        handle_ppt_command(args)
     else:
         parser.print_help()
 

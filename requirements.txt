@@ -1,3 +1,7 @@
 requests
 python-dotenv
 cos-python-sdk-v5
+python-pptx>=1.0
+jsonschema>=4.0
+pymupdf>=1.24
+pillow>=10.0

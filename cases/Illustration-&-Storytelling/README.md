@@ -1,6 +1,146 @@
 # Illustration & Storytelling
 
-**86 cases**
+**87 cases**
+---
+
+## [ym-0023] Social Media Post - Anime Protagonist in Wildflower Meadow 🚀
+
+- Source: youmind | Author: Taaruk
+
+[📄 Full case →](ym-0023-Social-Media-Post-Anime-Protagonist-in-Wildflower-Meadow.md)
+---
+
+## [ym-0042] Infographic / Edu Visual - Minimalist Japanese Vector Line Art 🚀
+
+- Source: youmind | Author: Taaruk
+
+[📄 Full case →](ym-0042-Infographic-Edu-Visual-Minimalist-Japanese-Vector-Line-A.md)
+---
+
+## [ym-0046] Infographic / Edu Visual - Katsudon Cooking Storyboard 🚀
+
+- Source: youmind | Author: オズ
+
+[📄 Full case →](ym-0046-Infographic-Edu-Visual-Katsudon-Cooking-Storyboard.md)
+---
+
+## [ym-0073] Comic / Storyboard - Urdu Sketchbook Character Sheet 🚀
+
+- Source: youmind | Author: Aaliya
+
+[📄 Full case →](ym-0073-Comic-Storyboard-Urdu-Sketchbook-Character-Sheet.md)
+---
+
+## [ym-0074] Comic / Storyboard - Cinematic Bustling Market Scene Sketch 🚀
+
+- Source: youmind | Author: Kōda
+
+[📄 Full case →](ym-0074-Comic-Storyboard-Cinematic-Bustling-Market-Scene-Sketch.md)
+---
+
+## [ym-0075] Comic / Storyboard - Anime Inspired Korean Fashion Portrait 🚀
+
+- Source: youmind | Author: Johnn
+
+[📄 Full case →](ym-0075-Comic-Storyboard-Anime-Inspired-Korean-Fashion-Portrait.md)
+---
+
+## [ym-0076] Comic / Storyboard - Epic Fantasy Warrior Landscape 🚀
+
+- Source: youmind | Author: Ahmad Faraz
+
+[📄 Full case →](ym-0076-Comic-Storyboard-Epic-Fantasy-Warrior-Landscape.md)
+---
+
+## [ym-0077] Comic / Storyboard - AI Manga Deadline War Room 🚀
+
+- Source: youmind | Author: タダオ｜AIマンガ家
+
+[📄 Full case →](ym-0077-Comic-Storyboard-AI-Manga-Deadline-War-Room.md)
+---
+
+## [ym-0082] Comic / Storyboard - Bubble Dragon and Fox Stretching 🚀
+
+- Source: youmind | Author: 輝鳴紅葉🫧🌸シャボン玉のバーチャルビデオ屋
+
+[📄 Full case →](ym-0082-Comic-Storyboard-Bubble-Dragon-and-Fox-Stretching.md)
+---
+
+## [ym-0085] Comic / Storyboard - Retro Magic Academy Visual Novel UI 🚀
+
+- Source: youmind | Author: ないステ
+
+[📄 Full case →](ym-0085-Comic-Storyboard-Retro-Magic-Academy-Visual-Novel-UI.md)
+---
+
+## [ym-0086] Comic / Storyboard - Rainy Studio Artist with Black Cats 🚀
+
+- Source: youmind | Author: 春永睦月　Harunaga Mutsuki
+
+[📄 Full case →](ym-0086-Comic-Storyboard-Rainy-Studio-Artist-with-Black-Cats.md)
+---
+
+## [ym-0087] Comic / Storyboard - Reality TV Prank Screenshot 🚀
+
+- Source: youmind | Author: Eris Create Lab
+
+[📄 Full case →](ym-0087-Comic-Storyboard-Reality-TV-Prank-Screenshot.md)
+---
+
+## [ym-0088] Comic / Storyboard - Low Battery Pig Pajama Character 🚀
+
+- Source: youmind | Author: Kiki
+
+[📄 Full case →](ym-0088-Comic-Storyboard-Low-Battery-Pig-Pajama-Character.md)
+---
+
+## [ff-0242] 绝美国风工笔画书签设计
+
+- Source: freestylefly | Author: @akokoi1
+
+[📄 Full case →](ff-0242-绝美国风工笔画书签设计.md)
+---
+
+## [ff-0204] 智能动画分镜生成器
+
+- Source: freestylefly | Author: @joshesye
+
+[📄 Full case →](ff-0204-智能动画分镜生成器.md)
+---
+
+## [ff-0196] 试卷上的涂鸦巨龙
+
+- Source: freestylefly | Author: @GeekCatX
+
+[📄 Full case →](ff-0196-试卷上的涂鸦巨龙.md)
+---
+
+## [ev-0037] Retro Programming Museum Cartoon
+
+- Source: evolink | Author: XiaohuiAI666
+
+[📄 Full case →](ev-0037-Retro-Programming-Museum-Cartoon.md)
+---
+
+## [ev-0062] Surreal Japanese Futuristic City Illustration
+
+- Source: evolink | Author: Tresmort
+
+[📄 Full case →](ev-0062-Surreal-Japanese-Futuristic-City-Illustration.md)
+---
+
+## [ev-0068] Naturalist-Style Food Specimen Cross-Section
+
+- Source: evolink | Author: GeekCatX
+
+[📄 Full case →](ev-0068-Naturalist-Style-Food-Specimen-Cross-Section.md)
+---
+
+## [ev-0076] Miyazaki-style short film pipeline
+
+- Source: evolink | Author: happycapyai
+
+[📄 Full case →](ev-0076-Miyazaki-style-short-film-pipeline.md)
 ---
 
 ## [ff-0493] 东京旅行 13 格视频封面
@@ -388,6 +528,13 @@
 [📄 Full case →](ff-0193-千手观音化身打工人.md)
 ---
 
+## [ff-0115] 品牌视觉识别图 🚀
+
+- Source: freestylefly | Author: @onofumi_AI
+
+[📄 Full case →](ff-0115-品牌视觉识别图.md)
+---
+
 ## [ff-0185] 武则天发微博自拍太魔性了
 
 - Source: freestylefly | Author: @MrLarus
@@ -430,13 +577,6 @@
 [📄 Full case →](ff-0167-大唐玄武门之变的朋友圈.md)
 ---
 
-## [ff-0129] 绘画艺术风格图 🚀
-
-- Source: freestylefly | Author: @TlanoVRC
-
-[📄 Full case →](ff-0129-绘画艺术风格图.md)
----
-
 ## [ff-0127] 建筑空间场景图 🚀
 
 - Source: freestylefly | Author: @studiomasakaki
@@ -444,60 +584,18 @@
 [📄 Full case →](ff-0127-建筑空间场景图.md)
 ---
 
-## [ff-0125] 电商商品展示设计 🚀
-
-- Source: freestylefly | Author: @Gc_qube
-
-[📄 Full case →](ff-0125-电商商品展示设计-4.md)
----
-
-## [ff-0121] 建筑空间场景图 🚀
-
-- Source: freestylefly | Author: @loilokoji
-
-[📄 Full case →](ff-0121-建筑空间场景图-2.md)
----
-
-## [ff-0120] 建筑空间场景图 🚀
-
-- Source: freestylefly | Author: @UNIBRACITY
-
-[📄 Full case →](ff-0120-建筑空间场景图-3.md)
----
-
-## [ff-0118] 漫画分镜叙事设计
-
-- Source: freestylefly | Author: @nicdunz
-
-[📄 Full case →](ff-0118-漫画分镜叙事设计.md)
----
-
-## [ff-0117] 主题海报版式设计 🚀
-
-- Source: freestylefly | Author: @nicdunz
-
-[📄 Full case →](ff-0117-主题海报版式设计-8.md)
----
-
-## [ff-0116] 主题海报版式设计 🚀
-
-- Source: freestylefly | Author: @gamemangaanime
-
-[📄 Full case →](ff-0116-主题海报版式设计-9.md)
----
-
-## [ff-0115] 品牌视觉识别图 🚀
-
-- Source: freestylefly | Author: @onofumi_AI
-
-[📄 Full case →](ff-0115-品牌视觉识别图-3.md)
----
-
 ## [ff-0114] 插画艺术创作图 🚀
 
 - Source: freestylefly | Author: @kaikaitheaiguy
 
-[📄 Full case →](ff-0114-插画艺术创作图-2.md)
+[📄 Full case →](ff-0114-插画艺术创作图.md)
+---
+
+## [ff-0060] 漫画分镜叙事设计 🚀
+
+- Source: freestylefly | Author: @Gc_qube
+
+[📄 Full case →](ff-0060-漫画分镜叙事设计.md)
 ---
 
 ## [ff-0113] 动漫插画创作图 🚀
@@ -507,100 +605,9 @@
 [📄 Full case →](ff-0113-动漫插画创作图.md)
 ---
 
-## [ff-0112] 信息图可视化设计
-
-- Source: freestylefly | Author: @songguoxiansen
-
-[📄 Full case →](ff-0112-信息图可视化设计-3.md)
----
-
-## [ff-0060] 漫画分镜叙事设计 🚀
-
-- Source: freestylefly | Author: @Gc_qube
-
-[📄 Full case →](ff-0060-漫画分镜叙事设计-2.md)
----
-
-## [ff-0052] 写实摄影风格图 🚀
-
-- Source: freestylefly | Author: @nicdunz
-
-[📄 Full case →](ff-0052-写实摄影风格图-2.md)
----
-
 ## [ff-0044] 古风历史题材图 🚀
 
 - Source: freestylefly | Author: @liyue_ai
 
 [📄 Full case →](ff-0044-古风历史题材图.md)
----
-
-## [ff-0043] 插画艺术创作图 🚀
-
-- Source: freestylefly | Author: @stark_nico99
-
-[📄 Full case →](ff-0043-插画艺术创作图-3.md)
----
-
-## [ff-0040] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @midori_tatsuta
-
-[📄 Full case →](ff-0040-综合应用场景图-8.md)
----
-
-## [ff-0039] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @midori_tatsuta
-
-[📄 Full case →](ff-0039-综合应用场景图-9.md)
----
-
-## [ff-0038] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @midori_tatsuta
-
-[📄 Full case →](ff-0038-综合应用场景图-10.md)
----
-
-## [ff-0037] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @midori_tatsuta
-
-[📄 Full case →](ff-0037-综合应用场景图-11.md)
----
-
-## [ff-0034] 插画艺术创作图 🚀
-
-- Source: freestylefly | Author: @Ryan_Suo
-
-[📄 Full case →](ff-0034-插画艺术创作图-4.md)
----
-
-## [ff-0032] 插画艺术创作图 🚀
-
-- Source: freestylefly | Author: @austinit
-
-[📄 Full case →](ff-0032-插画艺术创作图-5.md)
----
-
-## [ff-0030] 写实摄影风格图 🚀
-
-- Source: freestylefly | Author: @opc_8838
-
-[📄 Full case →](ff-0030-写实摄影风格图-4.md)
----
-
-## [ff-0022] 插画艺术风格创作 🚀
-
-- Source: freestylefly | Author: @Tanemomi_Ver2
-
-[📄 Full case →](ff-0022-插画艺术风格创作-5.md)
----
-
-## [ff-0006] 插画艺术创作图 ⭐
-
-- Source: freestylefly | Author: 小红书号yi_xiao_jiu
-
-[📄 Full case →](ff-0006-插画艺术创作图-6.md)
 ---

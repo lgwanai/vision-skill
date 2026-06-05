@@ -1,6 +1,97 @@
 # Social Media & UI
 
-**176 cases**
+**107 cases**
+---
+
+## [ym-0004] E-commerce Live Stream UI Mockup ⭐ 🚀
+
+- Source: youmind | Author: 神经病不想好转
+
+[📄 Full case →](ym-0004-E-commerce-Live-Stream-UI-Mockup.md)
+---
+
+## [ym-0037] Infographic / Edu Visual - Japanese Okonomiyaki Recipe Card 🚀
+
+- Source: youmind | Author: Maki@Sunwood AI Labs.
+
+[📄 Full case →](ym-0037-Infographic-Edu-Visual-Japanese-Okonomiyaki-Recipe-Card.md)
+---
+
+## [ym-0045] Infographic / Edu Visual - Codex Jigsaw Puzzle Tech Banner 🚀
+
+- Source: youmind | Author: 向阳乔木
+
+[📄 Full case →](ym-0045-Infographic-Edu-Visual-Codex-Jigsaw-Puzzle-Tech-Banner.md)
+---
+
+## [ym-0063] YouTube Thumbnail - Japanese Hot Spring TV Report 🚀
+
+- Source: youmind | Author: 楽園
+
+[📄 Full case →](ym-0063-YouTube-Thumbnail-Japanese-Hot-Spring-TV-Report.md)
+---
+
+## [ym-0064] YouTube Thumbnail - Anime Character Transfer to Reality 🚀
+
+- Source: youmind | Author: Eris Create Lab
+
+[📄 Full case →](ym-0064-YouTube-Thumbnail-Anime-Character-Transfer-to-Reality.md)
+---
+
+## [ym-0065] YouTube Thumbnail - Golden Fried Rice Storyboard Sheet 🚀
+
+- Source: youmind | Author: オズ
+
+[📄 Full case →](ym-0065-YouTube-Thumbnail-Golden-Fried-Rice-Storyboard-Sheet.md)
+---
+
+## [ym-0069] YouTube Thumbnail - Sakura Travel Cinema Title Card 🚀
+
+- Source: youmind | Author: AI写真ラボ / AIバーチャルカメラマン
+
+[📄 Full case →](ym-0069-YouTube-Thumbnail-Sakura-Travel-Cinema-Title-Card.md)
+---
+
+## [ym-0070] YouTube Thumbnail - Japanese Neon Marketing Thumbnail 🚀
+
+- Source: youmind | Author: AI写真ラボ / AIバーチャルカメラマン
+
+[📄 Full case →](ym-0070-YouTube-Thumbnail-Japanese-Neon-Marketing-Thumbnail.md)
+---
+
+## [ym-0112] E-commerce Main Image - Streetwear Fashion Catalog Shoot 🚀
+
+- Source: youmind | Author: Cherry 2.O
+
+[📄 Full case →](ym-0112-E-commerce-Main-Image-Streetwear-Fashion-Catalog-Shoot.md)
+---
+
+## [ev-0049] Douyin Livestream Sales Screenshot
+
+- Source: evolink | Author: laogeai
+
+[📄 Full case →](ev-0049-Douyin-Livestream-Sales-Screenshot.md)
+---
+
+## [ev-0050] Social App Match Success Screen
+
+- Source: evolink | Author: songguoxiansen
+
+[📄 Full case →](ev-0050-Social-App-Match-Success-Screen.md)
+---
+
+## [ev-0073] Cyberpunk AI Tools Comparison Poster 🚀
+
+- Source: evolink | Author: MoveHiro1219
+
+[📄 Full case →](ev-0073-Cyberpunk-AI-Tools-Comparison-Poster.md)
+---
+
+## [ev-0074] Japanese AI Battle YouTube Thumbnail 🚀
+
+- Source: evolink | Author: MoveHiro1219
+
+[📄 Full case →](ev-0074-Japanese-AI-Battle-YouTube-Thumbnail.md)
 ---
 
 ## [ff-0440] 手机拍摄 FaceTime 工作屏幕
@@ -52,20 +143,6 @@
 [📄 Full case →](ff-0387-Netflix-首页主视觉-UI.md)
 ---
 
-## [ff-0336] 个人网页视觉设计
-
-- Source: freestylefly | Author: 苍何原创实测（公众号文章《我逆向了 329 条 GPT-Image2 提示词模板，全部开源！》）
-
-[📄 Full case →](ff-0336-个人网页视觉设计.md)
----
-
-## [ff-0335] 朋友圈截图生成
-
-- Source: freestylefly | Author: 苍何原创实测（公众号文章《我逆向了 329 条 GPT-Image2 提示词模板，全部开源！》）
-
-[📄 Full case →](ff-0335-朋友圈截图生成.md)
----
-
 ## [ff-0330] 月下美女直播画面 ⭐
 
 - Source: freestylefly | Author: 苍何原创实测（公众号文章《我逆向了 329 条 GPT-Image2 提示词模板，全部开源！》）
@@ -80,11 +157,11 @@
 [📄 Full case →](ff-0308-抖音直播截图画面.md)
 ---
 
-## [ff-0289] 直播界面设计图
+## [ff-0152] 直播界面设计图 🚀
 
-- Source: freestylefly | Author: @rionaifantasy
+- Source: freestylefly | Author: @coder_left
 
-[📄 Full case →](ff-0289-直播界面设计图.md)
+[📄 Full case →](ff-0152-直播界面设计图.md)
 ---
 
 ## [ff-0288] 抖音美女直播间界面设计
@@ -115,11 +192,11 @@
 [📄 Full case →](ff-0282-温柔治愈系二次元手机截图.md)
 ---
 
-## [ff-0280] 封面排版设计图
+## [ff-0090] 信息图可视化设计 🚀
 
-- Source: freestylefly | Author: OpenNana
+- Source: freestylefly | Author: @A9Quant
 
-[📄 Full case →](ff-0280-封面排版设计图.md)
+[📄 Full case →](ff-0090-信息图可视化设计.md)
 ---
 
 ## [ff-0269] 拒绝盲目催婚的暖心视频号截图
@@ -136,11 +213,11 @@
 [📄 Full case →](ff-0261-智能视频生成器暗黑界面设计.md)
 ---
 
-## [ff-0260] 社媒界面截图
+## [ff-0002] 社媒界面截图 ⭐
 
-- Source: freestylefly | Author: @MrLarus
+- Source: freestylefly | Author: 小红书号4264014889
 
-[📄 Full case →](ff-0260-社媒界面截图.md)
+[📄 Full case →](ff-0002-社媒界面截图.md)
 ---
 
 ## [ff-0259] 精致女孩背后的网贷真相
@@ -269,48 +346,6 @@
 [📄 Full case →](ff-0163-诗仙李白月下直播起舞.md)
 ---
 
-## [ff-0161] 应用界面样机图 🚀
-
-- Source: freestylefly | Author: @DanDaniDaniel01
-
-[📄 Full case →](ff-0161-应用界面样机图-2.md)
----
-
-## [ff-0159] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @onlyhuman028
-
-[📄 Full case →](ff-0159-界面交互设计图.md)
----
-
-## [ff-0158] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @coconut_256
-
-[📄 Full case →](ff-0158-界面交互设计图-2.md)
----
-
-## [ff-0156] 应用界面样机图 🚀
-
-- Source: freestylefly | Author: @linxiaobei888
-
-[📄 Full case →](ff-0156-应用界面样机图-3.md)
----
-
-## [ff-0152] 直播界面设计图 🚀
-
-- Source: freestylefly | Author: @coder_left
-
-[📄 Full case →](ff-0152-直播界面设计图-2.md)
----
-
-## [ff-0149] 直播界面设计图 🚀
-
-- Source: freestylefly | Author: @JCutcut47692
-
-[📄 Full case →](ff-0149-直播界面设计图-3.md)
----
-
 ## [ff-0148] 综合应用场景图 🚀
 
 - Source: freestylefly | Author: @alanlovelq
@@ -318,32 +353,11 @@
 [📄 Full case →](ff-0148-综合应用场景图.md)
 ---
 
-## [ff-0146] 综合应用场景图 🚀
+## [ff-0094] 绘画艺术风格图 🚀
 
-- Source: freestylefly | Author: @alanlovelq
+- Source: freestylefly | Author: @sayaka_aiart
 
-[📄 Full case →](ff-0146-综合应用场景图-3.md)
----
-
-## [ff-0145] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @alanlovelq
-
-[📄 Full case →](ff-0145-综合应用场景图-4.md)
----
-
-## [ff-0133] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @yyyole
-
-[📄 Full case →](ff-0133-界面交互设计图-6.md)
----
-
-## [ff-0131] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @IndieDevHailey
-
-[📄 Full case →](ff-0131-界面交互设计图-8.md)
+[📄 Full case →](ff-0094-绘画艺术风格图.md)
 ---
 
 ## [ff-0111] 视频封面界面图 🚀
@@ -353,83 +367,6 @@
 [📄 Full case →](ff-0111-视频封面界面图.md)
 ---
 
-## [ff-0110] 视频封面界面图 🚀
-
-- Source: freestylefly | Author: @TlanoAI
-
-[📄 Full case →](ff-0110-视频封面界面图-2.md)
----
-
-## [ff-0109] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @underwoodxie96
-
-[📄 Full case →](ff-0109-综合应用场景图-5.md)
----
-
-## [ff-0108] 综合应用场景图 🚀
-
-- Source: freestylefly | Author: @underwoodxie96
-
-[📄 Full case →](ff-0108-综合应用场景图-6.md)
----
-
-## [ff-0107] 应用界面样机图 🚀
-
-- Source: freestylefly | Author: @tehno_maniak
-
-[📄 Full case →](ff-0107-应用界面样机图-5.md)
----
-
-## [ff-0104] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @marouane53
-
-[📄 Full case →](ff-0104-界面交互设计图-10.md)
----
-
-## [ff-0103] 视频封面界面图 🚀
-
-- Source: freestylefly | Author: @bowowwoaaa2
-
-[📄 Full case →](ff-0103-视频封面界面图-3.md)
----
-
-## [ff-0096] 主题海报版式设计 🚀
-
-- Source: freestylefly | Author: @sayaka_aiart
-
-[📄 Full case →](ff-0096-主题海报版式设计-12.md)
----
-
-## [ff-0095] 品牌视觉识别图 🚀
-
-- Source: freestylefly | Author: @sayaka_aiart
-
-[📄 Full case →](ff-0095-品牌视觉识别图-4.md)
----
-
-## [ff-0094] 绘画艺术风格图 🚀
-
-- Source: freestylefly | Author: @sayaka_aiart
-
-[📄 Full case →](ff-0094-绘画艺术风格图-2.md)
----
-
-## [ff-0093] 插画艺术风格创作 🚀
-
-- Source: freestylefly | Author: @sayaka_aiart
-
-[📄 Full case →](ff-0093-插画艺术风格创作-2.md)
----
-
-## [ff-0092] 视频封面界面图 🚀
-
-- Source: freestylefly | Author: @Yuupapa_free
-
-[📄 Full case →](ff-0092-视频封面界面图-4.md)
----
-
 ## [ff-0091] 游戏界面截图 🚀
 
 - Source: freestylefly | Author: @wolfaidev
@@ -437,81 +374,11 @@
 [📄 Full case →](ff-0091-游戏界面截图.md)
 ---
 
-## [ff-0090] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @A9Quant
-
-[📄 Full case →](ff-0090-信息图可视化设计-5.md)
----
-
-## [ff-0082] 信息图可视化设计 🚀
-
-- Source: freestylefly | Author: @HumanOS_v2
-
-[📄 Full case →](ff-0082-信息图可视化设计-9.md)
----
-
-## [ff-0057] 界面交互设计图 🚀
-
-- Source: freestylefly | Author: @liyue_ai
-
-[📄 Full case →](ff-0057-界面交互设计图-13.md)
----
-
-## [ff-0049] 直播界面设计图 🚀
-
-- Source: freestylefly | Author: @kylegeeks
-
-[📄 Full case →](ff-0049-直播界面设计图-4.md)
----
-
-## [ff-0048] 直播界面设计图 🚀
-
-- Source: freestylefly | Author: @kylegeeks
-
-[📄 Full case →](ff-0048-直播界面设计图-5.md)
----
-
-## [ff-0042] 写实摄影风格图 🚀
-
-- Source: freestylefly | Author: @blanplan
-
-[📄 Full case →](ff-0042-写实摄影风格图-3.md)
----
-
-## [ff-0021] 直播界面设计图 🚀
-
-- Source: freestylefly | Author: @sjbbxhz
-
-[📄 Full case →](ff-0021-直播界面设计图-6.md)
----
-
-## [ff-0007] 应用界面样机图
-
-- Source: freestylefly | Author: 小红书号944846927
-
-[📄 Full case →](ff-0007-应用界面样机图-7.md)
----
-
 ## [ff-0004] 老干妈风味
 
 - Source: freestylefly | Author: 小红书号989137706
 
 [📄 Full case →](ff-0004-老干妈风味.md)
----
-
-## [ff-0002] 社媒界面截图 ⭐
-
-- Source: freestylefly | Author: 小红书号4264014889
-
-[📄 Full case →](ff-0002-社媒界面截图-2.md)
----
-
-## [ff-0001] 信息图可视化设计 ⭐
-
-- Source: freestylefly | Author: 小红书号insight_express
-
-[📄 Full case →](ff-0001-信息图可视化设计-27.md)
 ---
 
 ## [ev-0001] One-Prompt UI Design Generation
@@ -617,13 +484,6 @@
 - Source: evolink | Author: Shinning1010
 
 [📄 Full case →](ev-0036-Elon-Musk-Douyin-Livestream-Screenshot.md)
----
-
-## [ev-0037] Liu Yifei Douyin Livestream Screenshot
-
-- Source: evolink | Author: kylegeeks
-
-[📄 Full case →](ev-0037-Liu-Yifei-Douyin-Livestream-Screenshot-2.md)
 ---
 
 ## [ev-0038] Cyberpunk Neon UI Design System
@@ -890,347 +750,4 @@
 - Source: evolink | Author: zenkaiAI
 
 [📄 Full case →](ev-0118-Nostalgic-16-Photo-Couple-Grid.md)
----
-
-## [ev-0119] Anime BL Promo Thumbnail
-
-- Source: evolink | Author: himukai_an
-
-[📄 Full case →](ev-0119-Anime-BL-Promo-Thumbnail.md)
----
-
-## [ev-0120] Artist and Ethereal Muse at Night 🚀
-
-- Source: evolink | Author: almimeister
-
-[📄 Full case →](ev-0120-Artist-and-Ethereal-Muse-at-Night.md)
----
-
-## [ev-0121] Hand-Drawn Storyboard Sheet
-
-- Source: evolink | Author: saniaspeaks_
-
-[📄 Full case →](ev-0121-Hand-Drawn-Storyboard-Sheet.md)
----
-
-## [ev-0122] 前后端数据库 SaaS 信息图
-
-- Source: evolink | Author: alantech_
-
-[📄 Full case →](ev-0122-前后端数据库-SaaS-信息图.md)
----
-
-## [ev-0123] 个人形象分析图卡
-
-- Source: evolink | Author: you1873118
-
-[📄 Full case →](ev-0123-个人形象分析图卡.md)
----
-
-## [ev-0124] 12-Panel Storyboard Poster
-
-- Source: evolink | Author: bmx_ai13
-
-[📄 Full case →](ev-0124-12-Panel-Storyboard-Poster.md)
----
-
-## [ev-0125] Brand Collage Social Template
-
-- Source: evolink | Author: aiistudiocom
-
-[📄 Full case →](ev-0125-Brand-Collage-Social-Template.md)
----
-
-## [ev-0126] Outfit Breakdown Chart
-
-- Source: evolink | Author: Shinning1010
-
-[📄 Full case →](ev-0126-Outfit-Breakdown-Chart.md)
----
-
-## [ev-0127] Recipe Infographic Layout
-
-- Source: evolink | Author: aiistudiocom
-
-[📄 Full case →](ev-0127-Recipe-Infographic-Layout.md)
----
-
-## [ev-0128] Personal Color Analysis Graphic Board
-
-- Source: evolink | Author: ZaraIrahh
-
-[📄 Full case →](ev-0128-Personal-Color-Analysis-Graphic-Board.md)
----
-
-## [ev-0129] Futuristic Hall Fashion Shot Sequence
-
-- Source: evolink | Author: weiinberg
-
-[📄 Full case →](ev-0129-Futuristic-Hall-Fashion-Shot-Sequence.md)
----
-
-## [ev-0130] Annotated Coffee Table Mood Board
-
-- Source: evolink | Author: Ciri_ai
-
-[📄 Full case →](ev-0130-Annotated-Coffee-Table-Mood-Board.md)
----
-
-## [ev-0131] High-Fashion Beverage Campaign Board
-
-- Source: evolink | Author: SPEEDAI07
-
-[📄 Full case →](ev-0131-High-Fashion-Beverage-Campaign-Board.md)
----
-
-## [ev-0132] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0132-.md)
----
-
-## [ev-0133] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0133--2.md)
----
-
-## [ev-0134] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0134--3.md)
----
-
-## [ev-0135] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0135--4.md)
----
-
-## [ev-0136] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0136--5.md)
----
-
-## [ev-0137] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0137--6.md)
----
-
-## [ev-0138] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0138--7.md)
----
-
-## [ev-0139] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0139--8.md)
----
-
-## [ev-0140] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0140--9.md)
----
-
-## [ev-0141] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0141--10.md)
----
-
-## [ev-0142] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0142--11.md)
----
-
-## [ev-0143] Handwritten Study Infographic Poster
-
-- Source: evolink | Author: YaZoraiz
-
-[📄 Full case →](ev-0143-Handwritten-Study-Infographic-Poster.md)
----
-
-## [ev-0144] Brand Identity Moodboard System
-
-- Source: evolink | Author: SaasJunctionHQ
-
-[📄 Full case →](ev-0144-Brand-Identity-Moodboard-System.md)
----
-
-## [ev-0145] Landscape Architecture Board
-
-- Source: evolink | Author: iamaiistudio
-
-[📄 Full case →](ev-0145-Landscape-Architecture-Board.md)
----
-
-## [ev-0146] Graphic Design Portfolio Mockup
-
-- Source: evolink | Author: abs_uiux
-
-[📄 Full case →](ev-0146-Graphic-Design-Portfolio-Mockup.md)
----
-
-## [ev-0147] Neo-Noir Character Design Board
-
-- Source: evolink | Author: Mind_Boticni
-
-[📄 Full case →](ev-0147-Neo-Noir-Character-Design-Board.md)
----
-
-## [ev-0148] Heliotropic Architecture Board
-
-- Source: evolink | Author: Gdgtify
-
-[📄 Full case →](ev-0148-Heliotropic-Architecture-Board.md)
----
-
-## [ev-0149] Brand Identity Guideline Board
-
-- Source: evolink | Author: Shorelyn_
-
-[📄 Full case →](ev-0149-Brand-Identity-Guideline-Board.md)
----
-
-## [ev-0150] Illustrated 2027 Desktop Calendar
-
-- Source: evolink | Author: Mind_Boticni
-
-[📄 Full case →](ev-0150-Illustrated-2027-Desktop-Calendar.md)
----
-
-## [ev-0151] Monoluxe Automotive Poster Grid
-
-- Source: evolink | Author: Ozayrr_irl
-
-[📄 Full case →](ev-0151-Monoluxe-Automotive-Poster-Grid.md)
----
-
-## [ev-0152] Exploded Vehicle View
-
-- Source: evolink | Author: CharaspowerAI
-
-[📄 Full case →](ev-0152-Exploded-Vehicle-View.md)
----
-
-## [ev-0153] Male Glow-Up Analysis Poster
-
-- Source: evolink | Author: frametheory058
-
-[📄 Full case →](ev-0153-Male-Glow-Up-Analysis-Poster.md)
----
-
-## [ev-0154] Tokyo Pink Fashion Collage
-
-- Source: evolink | Author: Mind_Boticni
-
-[📄 Full case →](ev-0154-Tokyo-Pink-Fashion-Collage.md)
----
-
-## [ev-0155] Sony Camera Reference Infographic
-
-- Source: evolink | Author: j_smeaton99
-
-[📄 Full case →](ev-0155-Sony-Camera-Reference-Infographic.md)
----
-
-## [ev-0156] Desk Setup Audit Infographic
-
-- Source: evolink | Author: DilshadAI1
-
-[📄 Full case →](ev-0156-Desk-Setup-Audit-Infographic.md)
----
-
-## [ev-0157] Country Sports Infographic
-
-- Source: evolink | Author: MrDasOnX
-
-[📄 Full case →](ev-0157-Country-Sports-Infographic.md)
----
-
-## [ev-0158] Die-Cut Sticker Illustration
-
-- Source: evolink | Author: Ciri_ai
-
-[📄 Full case →](ev-0158-Die-Cut-Sticker-Illustration.md)
----
-
-## [ev-0159] Rider-Waite Tarot Card
-
-- Source: evolink | Author: itsphotogptai
-
-[📄 Full case →](ev-0159-Rider-Waite-Tarot-Card.md)
----
-
-## [ev-0161] Sitcom Intro Storyboard Sheet
-
-- Source: evolink | Author: KimAkiyama81
-
-[📄 Full case →](ev-0161-Sitcom-Intro-Storyboard-Sheet.md)
----
-
-## [ev-0162] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0162--12.md)
----
-
-## [ev-0163] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0163--13.md)
----
-
-## [ev-0164] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0164--14.md)
----
-
-## [ev-0165] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0165--15.md)
----
-
-## [ev-0166] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0166--16.md)
----
-
-## [ev-0167] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0167--17.md)
----
-
-## [ev-0168] 
-
-- Source: evolink | Author: 
-
-[📄 Full case →](ev-0168--18.md)
 ---
