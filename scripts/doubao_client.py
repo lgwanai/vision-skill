@@ -130,7 +130,7 @@ class DoubaoClient:
             "response_format": "url",
             "size": "2K",
             "stream": False, # 默认为 False，简化处理
-            "watermark": True
+            "watermark": False
         }
         
         # 处理参考图

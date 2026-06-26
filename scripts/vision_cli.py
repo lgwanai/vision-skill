@@ -261,6 +261,12 @@ def handle_generate(args):
         style_prompt = STYLE_PRESETS[args.style]
         prompt = f"{style_prompt}. Content: {prompt}"
 
+    if args.ref_images:
+        for image_path in args.ref_images:
+            if not os.path.exists(image_path) and not image_path.startswith(('http://', 'https://')):
+                print(json.dumps({"error": f"参考图不存在或无效URL: {image_path}"}, ensure_ascii=False))
+                return
+
     params = {
         "prompt": prompt,
         "ref_images": args.ref_images,

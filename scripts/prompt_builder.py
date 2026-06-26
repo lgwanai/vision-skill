@@ -35,19 +35,19 @@ FIDELITY_MODES = {
     "normal": {
         "label": "普通模式",
         "label_en": "Normal",
-        "description": "重点参考高质量案例，在用户需求基础上合理增强。适用于大多数图像生成场景。",
-        "description_en": "Heavily reference quality cases, enhance user requirements reasonably. For most image generation scenarios.",
-        "case_weight": 1.0,       # Full case reference
-        "injection_level": 1,     # Standard quality injections
-        "creativity": 0.5,        # Balanced creativity
+        "description": "以用户需求为主，案例只作灵感参考，避免堆砌摄影/渲染术语。适用于大多数图像生成场景。",
+        "description_en": "User brief first; cases are inspiration only. Avoid piling up camera/render keywords. For most image generation scenarios.",
+        "case_weight": 0.5,       # Cases inspire, never dominate the prompt
+        "injection_level": 0,     # Keep default prompts concise
+        "creativity": 0.65,       # Balanced, with room for model interpretation
     },
     "creative": {
         "label": "创意模式",
         "label_en": "Creative",
         "description": "尽最大可能联想，充分发挥AI艺术创作能力。适用于艺术插画、概念设计、抽象表达等创意场景。",
         "description_en": "Maximum association and AI artistic freedom. For art illustrations, concept design, abstract expression.",
-        "case_weight": 0.3,       # Light case reference (just for inspiration)
-        "injection_level": 2,     # Maximum quality injections
+        "case_weight": 0.2,       # Light case reference (just for inspiration)
+        "injection_level": 0,     # Creative mode should not be keyword soup
         "creativity": 1.0,        # Full creativity
     },
 }
@@ -453,10 +453,15 @@ class PromptBuilder:
         strategy = CATEGORY_STRATEGIES.get(category, CATEGORY_STRATEGIES["Portrait & People"])
         fidelity_config = FIDELITY_MODES.get(fidelity, FIDELITY_MODES["normal"])
 
-        # Adjust case usage based on fidelity
+        # Adjust case usage based on fidelity. Cases are inspiration signals,
+        # not text to copy into the final prompt.
         effective_cases = matched_cases or []
+        max_cases = 2
+        if fidelity == "strict":
+            max_cases = 1
         if fidelity == "creative":
-            effective_cases = (matched_cases or [])[:1]  # Light reference for creative
+            max_cases = 1
+        effective_cases = effective_cases[:max_cases]
 
         # Extract best patterns from matched cases (all modes benefit)
         case_patterns = self._extract_case_patterns(effective_cases)
@@ -488,12 +493,13 @@ class PromptBuilder:
             "quality_injections": self._summarize_injections(analysis, case_patterns, fidelity_config),
             "fidelity_mode": fidelity,
             "fidelity_label": fidelity_config["label"],
+            "reference_images": requirements.get("ref_images", []),
         }
 
         return result
 
     def _extract_case_patterns(self, cases):
-        """Extract reusable patterns from matched cases."""
+        """Extract compact inspiration signals from matched cases."""
         patterns = {
             "lighting_terms": [],
             "camera_terms": [],
@@ -501,20 +507,19 @@ class PromptBuilder:
             "style_descriptors": [],
             "structure_patterns": [],
             "neg_constraints": [],
+            "inspiration_notes": [],
         }
-        for c in cases[:5]:
+        for c in cases[:2]:
             prompt = c.get("prompt", "")
-            # Extract common high-quality descriptors
-            for term in ["studio lighting", "golden hour", "soft light", "dramatic lighting", "Rembrandt", "cinematic lighting"]:
+            title = c.get("title", "")
+            if title:
+                patterns["inspiration_notes"].append(title)
+            for term in ["golden hour", "soft light", "dramatic lighting", "cinematic lighting"]:
                 if term.lower() in prompt.lower() and term not in patterns["lighting_terms"]:
                     patterns["lighting_terms"].append(term)
-            for term in ["8K", "4K", "photorealistic", "hyper-realistic", "high resolution", "detailed"]:
+            for term in ["photorealistic", "editorial", "hand-drawn", "watercolor", "minimalist", "cinematic"]:
                 if term.lower() in prompt.lower() and term not in patterns["style_descriptors"]:
                     patterns["style_descriptors"].append(term)
-            # Extract negative constraints
-            for line in prompt.lower().split("\n"):
-                if any(kw in line for kw in ["avoid", "no ", "do not", "without", "禁止", "不要"]):
-                    patterns["neg_constraints"].append(line.strip())
         return patterns
 
     def _compose_prompt(self, req, strategy, analysis, patterns, lang, fidelity_config=None):
@@ -545,20 +550,25 @@ class PromptBuilder:
             methodology.append("Using platform-specific UI/UX prompt structure")
         else:
             prompt = self._build_natural_prompt(req, strategy, patterns, lang)
-            methodology.append("Using natural language approach with quality injections")
+            methodology.append("Using concise creative brief approach")
 
         # Reference image handling
         if req.get("ref_info"):
             ref = req["ref_info"]
             keep = ref.get("keep", "composition and subject structure")
             change = ref.get("change", req.get("style", "style"))
-            ref_instruction = f"\nBased on the reference image: maintain {keep}, transform {change}."
+            if lang == "zh":
+                ref_instruction = f"参考图已随请求提供。保留：{keep}。变化：{change}。不要逐字复述参考图，用它约束主体/结构/风格方向。"
+            else:
+                ref_instruction = f"Reference image is attached. Keep: {keep}. Change: {change}. Use it to guide subject, structure, or style; do not describe it as prompt filler."
             prompt = ref_instruction + "\n" + prompt
             methodology.append(f"Image-to-image mode: keep [{keep}], change [{change}]")
 
         # Raycast parameterization
         if req.get("raycast"):
             methodology.append("Raycast dynamic parameters enabled for flexible iteration")
+        if patterns.get("inspiration_notes"):
+            methodology.append("Cases used as inspiration only: " + "; ".join(patterns["inspiration_notes"][:2]))
 
         methodology.append(f"Category strategy: {req.get('category', 'General')}")
         methodology.append(f"Approach: {analysis['approach']}")
@@ -584,15 +594,15 @@ class PromptBuilder:
 
         if fidelity_config["creativity"] <= 0.3:  # strict
             if is_chinese:
-                return prompt + "\n\n【重要】上述指定的所有文字内容必须原样呈现，不得修改、改写或编造任何文字。光影、构图、画质等视觉效果请充分优化。"
+                return prompt + "\n\n【严格】所有指定文字必须原样呈现；画面语言可以自然优化，但不要添加未要求的文案。"
             else:
-                return prompt + "\n\nIMPORTANT: All text/copy specified above must appear exactly as written. Do not modify, paraphrase, or invent any text content. Visual quality (lighting, composition, effects) should be fully optimized."
+                return prompt + "\n\nSTRICT: render all specified text exactly as written. Visual treatment may improve naturally, but do not invent extra copy."
 
         if fidelity_config["creativity"] >= 1.0:  # creative
             if is_chinese:
-                return prompt + "\n\n请充分发挥艺术创造力，大胆运用戏剧性光影、非常规构图和大胆配色。可以自由联想和增强视觉元素，突破常规，追求独特的艺术表达。"
+                return prompt + "\n\n【创意】把以上内容当作方向，不要机械执行清单；允许重组构图、材质、光影和叙事关系，优先生成有惊喜但仍贴题的画面。"
             else:
-                return prompt + "\n\nFeel free to creatively interpret and enhance all visual elements. Push artistic boundaries with dramatic lighting, unexpected compositions, and bold color choices. Prioritize unique artistic expression over literal accuracy."
+                return prompt + "\n\nCREATIVE: treat the brief as direction, not a checklist. Recompose form, material, light, and visual narrative to make a surprising image that still fits the intent."
 
         return prompt  # normal: no wrapper
 
@@ -615,10 +625,6 @@ class PromptBuilder:
             if req.get("mood"):
                 parts.append(f"氛围：{req['mood']}。")
 
-            if strategy.get("photo_injection"):
-                parts.append("灯光：专业摄影棚灯光，柔和散射照明。")
-                parts.append("相机：高分辨率商业摄影，清晰对焦，适当浅景深。")
-
             if req.get("ratio"):
                 parts.append(f"画幅比例：{req['ratio']}。")
             if req.get("composition"):
@@ -633,28 +639,18 @@ class PromptBuilder:
             if req.get("special_elements"):
                 parts.append(f"附加元素：{req['special_elements']}。")
 
-            negs = list(strategy.get("neg_defaults", []))
-            if req.get("constraints"):
-                negs.extend(req["constraints"].split(","))
+            negs = self._collect_constraints(req, strategy)
             if negs:
-                parts.append("避免：" + "、".join(negs[:5]) + "。")
+                parts.append("避免：" + "、".join(negs[:3]) + "。")
         else:
             if purpose:
                 parts.append(f"Create a {style} {purpose} featuring {subject}.")
             else:
                 parts.append(f"Create a {style} image of {subject}.")
 
-            # Style specifics
-            parts.append(f"Visual style: {style}.")
             if req.get("mood"):
                 parts.append(f"Atmosphere: {req['mood']}.")
 
-            # Technical details
-            if strategy.get("photo_injection"):
-                parts.append("Lighting: professional studio lighting with soft diffused illumination.")
-                parts.append("Camera: high-resolution commercial photography, sharp focus, shallow depth of field where appropriate.")
-
-            # Composition
             if req.get("ratio"):
                 parts.append(f"Aspect ratio: {req['ratio']}.")
             if req.get("composition"):
@@ -672,14 +668,33 @@ class PromptBuilder:
             if req.get("special_elements"):
                 parts.append(f"Additional elements: {req['special_elements']}.")
 
-            # Negative constraints
-            negs = list(strategy.get("neg_defaults", []))
-            if req.get("constraints"):
-                negs.extend(req["constraints"].split(","))
+            negs = self._collect_constraints(req, strategy)
             if negs:
-                parts.append("Avoid: " + ", ".join(negs[:5]) + ".")
+                parts.append("Avoid: " + ", ".join(negs[:3]) + ".")
 
         return " ".join(parts)
+
+    def _collect_constraints(self, req, strategy, fallback=None):
+        """Return a short, de-duplicated constraint list.
+
+        User constraints come first. Category defaults are only used as a
+        fallback so the prompt stays open-ended and does not overfit examples.
+        """
+        constraints = []
+        raw = req.get("constraints") or ""
+        if raw:
+            constraints.extend([item.strip() for item in raw.split(",") if item.strip()])
+        if not constraints and fallback:
+            constraints.extend(fallback)
+
+        deduped = []
+        seen = set()
+        for item in constraints:
+            key = item.lower()
+            if key not in seen:
+                seen.add(key)
+                deduped.append(item)
+        return deduped
 
     def _build_photography_prompt(self, req, strategy, patterns, lang="en"):
         """Build a professional photography prompt."""
@@ -697,21 +712,14 @@ class PromptBuilder:
         if req.get("mood"):
             parts.append(f"Mood: {req['mood']}.")
 
-        # Camera specs (critical for photography quality)
-        camera = req.get("camera", "professional DSLR")
-        lens = req.get("lens", "85mm f/1.4 prime lens")
-        parts.append(f"Shot on {camera} with {lens}.")
-
-        # Lighting
-        lighting = req.get("lighting", "soft natural window light with subtle fill")
-        parts.append(f"Lighting: {lighting}.")
-
-        # Composition
-        comp = req.get("composition", "rule of thirds composition with shallow depth of field")
-        parts.append(f"Composition: {comp}.")
-
-        # Quality
-        parts.append("Hyper-realistic, 8K resolution, commercial photography quality, natural skin texture, cinematic color grading.")
+        if req.get("camera") or req.get("lens"):
+            camera = req.get("camera", "camera")
+            lens = req.get("lens", "lens")
+            parts.append(f"Shot on {camera} with {lens}.")
+        if req.get("lighting"):
+            parts.append(f"Lighting: {req['lighting']}.")
+        if req.get("composition"):
+            parts.append(f"Composition: {req['composition']}.")
 
         # Color
         if req.get("colors"):
@@ -722,42 +730,40 @@ class PromptBuilder:
             parts.append(f"Aspect ratio: {req['ratio']}.")
 
         # Negative
-        negs = ["no CGI render look", "no plastic skin", "no over-processed HDR", "no artificial bokeh"]
-        if req.get("constraints"):
-            negs.extend(req["constraints"].split(","))
-        parts.append("Avoid: " + ", ".join(negs[:4]) + ".")
+        negs = self._collect_constraints(req, strategy, fallback=["no CGI render look", "no plastic skin"])
+        if negs:
+            parts.append("Avoid: " + ", ".join(negs[:3]) + ".")
 
         return " ".join(parts)
 
-    def _build_commercial_prompt(self, req, strategy, patterns):
+    def _build_commercial_prompt(self, req, strategy, patterns, lang="en"):
         """Build a commercial/e-commerce product prompt."""
         product = req.get("subject", "")
         style = req.get("style", "commercial product photography")
         parts = []
 
-        parts.append(f"Create a {style} hero shot for {product}.")
+        parts.append(f"Create a {style} image for {product}.")
         if req.get("product_details"):
             parts.append(f"Product details: {req['product_details']}.")
 
-        parts.append("Studio lighting: professional softbox with rim light for product definition, pure white seamless background.")
-        parts.append("Camera: macro commercial lens, 8K resolution, shallow depth of field on product, sharp focus throughout.")
         if req.get("ratio"):
             parts.append(f"Format: {req['ratio']}.")
         if req.get("scene"):
             parts.append(f"Context: {req['scene']}.")
+        if req.get("lighting"):
+            parts.append(f"Lighting: {req['lighting']}.")
 
-        negs = strategy.get("neg_defaults", [])
-        if req.get("constraints"):
-            negs.extend(req["constraints"].split(","))
-        parts.append("Avoid: " + ", ".join(negs[:4]) + ".")
+        negs = self._collect_constraints(req, strategy)
+        if negs:
+            parts.append("Avoid: " + ", ".join(negs[:3]) + ".")
 
         return " ".join(parts)
 
-    def _build_json_prompt(self, req, strategy, patterns):
+    def _build_json_prompt(self, req, strategy, patterns, lang="en"):
         """Build a JSON-structured prompt for complex layouts."""
         json_str = strategy.get("json_template", "")
         if not json_str:
-            return self._build_natural_prompt(req, strategy, patterns)
+            return self._build_natural_prompt(req, strategy, patterns, lang)
 
         # Fill template
         for key, val in req.items():
@@ -775,7 +781,7 @@ class PromptBuilder:
             "color_palette": req.get("colors", "4-color system: dominant + accent + neutral + highlight"),
             "background": req.get("background", "clean gradient with subtle texture"),
             "style": req.get("style", "editorial"),
-            "negative_constraints": ", ".join(strategy.get("neg_defaults", [])[:3]),
+            "negative_constraints": ", ".join(self._collect_constraints(req, strategy)[:3]),
         }
 
         for key, val in defaults.items():
@@ -783,7 +789,7 @@ class PromptBuilder:
 
         return json_str.strip()
 
-    def _build_platform_prompt(self, req, strategy, patterns):
+    def _build_platform_prompt(self, req, strategy, patterns, lang="en"):
         """Build a platform-specific UI/social media prompt."""
         platform = req.get("platform", "iOS")
         mode = req.get("mode", "light")
@@ -796,14 +802,12 @@ class PromptBuilder:
         if req.get("ui_elements"):
             parts.append(f"UI elements: {req['ui_elements']}.")
 
-        parts.append("High-fidelity mockup, all text clearly readable, accurate platform UI components.")
         if req.get("text_content"):
             parts.append(f"Display text: \"{req['text_content']}\" (must be pixel-perfect).")
 
-        negs = ["no gibberish placeholder text", "no mixed-platform UI elements", "no unreadable small text"]
-        if req.get("constraints"):
-            negs.extend(req["constraints"].split(","))
-        parts.append("Avoid: " + ", ".join(negs[:3]) + ".")
+        negs = self._collect_constraints(req, strategy, fallback=["no gibberish placeholder text", "no mixed-platform UI elements"])
+        if negs:
+            parts.append("Avoid: " + ", ".join(negs[:3]) + ".")
 
         return " ".join(parts)
 
@@ -861,7 +865,7 @@ class PromptBuilder:
             fidelity_config = FIDELITY_MODES["normal"]
         summary = []
         if fidelity_config["injection_level"] == 0:
-            return ["[严格模式] 无质量注入，使用用户原文" if True else "[Strict] No quality injections"]
+            return ["no automatic keyword injections"]
         style_key = analysis["style_key"]
         if style_key in STYLE_INJECTIONS:
             max_terms = 3 if fidelity_config["injection_level"] >= 2 else 1
@@ -888,6 +892,8 @@ def main():
     parser.add_argument("--mood", default="", help="Atmosphere / mood")
     parser.add_argument("--composition", default="", help="Composition style")
     parser.add_argument("--constraints", default="", help="Negative constraints (comma-separated)")
+    parser.add_argument("--ref", "--ref-image", dest="ref_images", action="append", default=[],
+                        help="Reference image path/URL to pass to generation")
     parser.add_argument("--ref-keep", default="", help="(Image-to-image) What to keep from reference")
     parser.add_argument("--ref-change", default="", help="(Image-to-image) What to change")
     parser.add_argument("--raycast", action="store_true", help="Enable Raycast dynamic parameters")
@@ -924,11 +930,12 @@ def main():
         "mood": args.mood,
         "composition": args.composition,
         "constraints": args.constraints,
+        "ref_images": args.ref_images,
         "complex_layout": args.complex,
         "raycast": args.raycast,
     }
 
-    if args.ref_keep or args.ref_change:
+    if args.ref_images or args.ref_keep or args.ref_change:
         requirements["ref_info"] = {
             "keep": args.ref_keep or "composition and subject",
             "change": args.ref_change or args.style,

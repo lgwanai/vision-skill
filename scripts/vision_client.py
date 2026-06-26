@@ -134,7 +134,7 @@ class VisionClient:
             "response_format": "url",
             "size": "2K",
             "stream": False,
-            "watermark": True
+            "watermark": False
         }
         
         if image_urls:

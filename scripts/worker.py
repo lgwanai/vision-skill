@@ -207,6 +207,8 @@ def handle_generation_task(params, metrics):
                     metrics["uploads"] = metrics.get("uploads", 0) + 1
             except Exception as e:
                 logger.warning(f"参考图处理失败: {e}")
+        if not processed_ref_images:
+            raise ValueError("所有参考图处理失败，已停止生图，避免退化为无参考图生成")
 
     logger.info("调用图像生成API")
     client = VisionClient()

@@ -27,8 +27,8 @@ Generate images from text prompts, optionally using reference images. **CRITICAL
 │  STEP 0: DETECT — Check if reference image is REQUIRED       │
 │  STEP 1: UNDERSTAND — Confirm requirements with user         │
 │  STEP 1.5: FIDELITY — Choose strict/normal/creative mode     │
-│  STEP 2: SEARCH — Find relevant cases from case library      │
-│  STEP 3: DRAFT — Compose bilingual prompt with case refs     │
+│  STEP 2: SEARCH — Find 1-2 inspiration cases, do not copy    │
+│  STEP 3: DRAFT — Compose a concise bilingual creative brief  │
 │  STEP 4: CONFIRM — User MUST approve before generation       │
 │  STEP 5: ITERATE — Refine until user says "generate"         │
 │  STEP 6: EXECUTE — Generate image via vision_cli.py          │
@@ -124,8 +124,8 @@ Use `AskUserQuestion` to present the three options:
 | Mode | Label | Behavior | Best For |
 |------|-------|----------|----------|
 | 🔒 **Strict** | 严格模式 | **文字内容**严格遵循用户原文，AI 不得修改/编造/改写任何文字。光影、构图、画质等**视觉效果正常优化**。正常参考案例库。 | 品牌文案、UI 界面、海报文字、广告标语等需要精确文字的场合。中文内容尤其容易出现 AI 篡改的场景。 |
-| 📋 **Normal** | 普通模式 | 重点参考高质量案例，在用户需求基础上合理增强。文字和视觉效果均进行适度优化。 | 大多数图像生成场景的默认选择。 |
-| 🎨 **Creative** | 创意模式 | 尽最大可能联想，充分发挥 AI 艺术创作能力。使用最大质量注入（3+ 术语/类别）。案例仅作灵感参考。 | 艺术插画、概念设计、抽象表达、风格探索等创意场景。 |
+| 📋 **Normal** | 普通模式 | 以用户需求为主，案例只作灵感参考，避免堆砌摄影/渲染术语。 | 大多数图像生成场景的默认选择。 |
+| 🎨 **Creative** | 创意模式 | 把需求当作方向，不机械执行清单；允许 AI 重组构图、材质、光影和叙事关系。案例仅作灵感参考。 | 艺术插画、概念设计、抽象表达、风格探索等创意场景。 |
 
 ##### Mode Selection Logic:
 
@@ -151,7 +151,7 @@ Once requirements are confirmed, search the unified case library (832 quality-fi
 ```bash
 python3 scripts/search_cases.py "<keywords>" --category "<category>" --style "<style>" --limit 5
 ```
-Present 2-3 most relevant cases to the user as context/reference. (Applies to all modes — strict mode references cases for visual patterns while enforcing text accuracy.)
+Use 1-2 relevant cases only as inspiration signals. Present case titles/categories if useful, but do **not** paste long case prompts into the final generation prompt and do **not** force the model to reproduce a case. The user's brief and any supplied reference image take priority over the case library.
 
 **STEP 3 — DRAFT (智能提示词生成):**
 Use the intelligent prompt builder engine that integrates three-project methodology. **Outputs bilingual (Chinese + English) by default** for ChatGPT and 豆包 compatibility:
@@ -167,6 +167,7 @@ python3 scripts/prompt_builder.py \
   --colors "<palette>" \
   --text "<text_content>" \
   --constraints "<constraints>" \
+  --ref "<reference_image_path_or_url>" \
   --lang "<zh/en/ja>" \
   --fidelity "<strict|normal|creative>" \
   --json-output
@@ -175,16 +176,16 @@ python3 scripts/prompt_builder.py \
 The engine automatically:
 - Selects the optimal approach (JSON-structured / natural language / photography spec / platform-specific)
 - Outputs **both Chinese and English prompts** — use the Chinese version for 豆包/国内模型, English for ChatGPT/DALL·E
-- Respects fidelity mode: strict (minimal additions) / normal (case-referenced, 1 term/injection) / creative (max injections, 3+ terms)
-- Injects category-specific best practices from the quality-filtered case library
-- Applies style-matched quality injections (camera/lens/lighting/composition terms from professional photography)
+- Respects fidelity mode: strict (text accuracy) / normal (concise, user-led) / creative (open-ended, high creative freedom)
+- Extracts light inspiration signals from the quality-filtered case library without copying full case prompts
+- Avoids automatic camera/lens/lighting keyword injection unless the user explicitly asks for those controls
 - Integrates negative constraints from the constraint library
 - References top-matched cases for pattern extraction (normal mode only)
 
 **Prompt Quality Principles (from quality-filtered case analysis):**
-1. **Photography params** for realistic styles — lighting, lens, camera, composition, film stock
+1. **Brief first** — keep the final prompt short enough for the image model to interpret creatively
 2. **Structured sections** for complex layouts — panels, grids, rows, columns with explicit numbering
-3. **Negative constraints** — always include 3-5 "Avoid:" items from the constraint library
+3. **Negative constraints** — include only user constraints or 1-3 essential defaults
 4. **Aspect ratio** — always specify, as 21.8% of quality cases do
 5. **Text specs** — for UI/posters, explicitly list every text string that must appear
 6. **Color system** — 4-6 color palette for posters/brand; dominant + accent for photos
@@ -193,7 +194,7 @@ The engine automatically:
 **STEP 4 — CONFIRM (用户确认):**
 Present the draft prompt to the user with:
 - The full prompt text
-- Reference to the cases that inspired it
+- Reference to the cases that inspired it, clearly marked as inspiration only
 - For `--ref` mode: confirm the reference image path and transformation details
 - Ask: "Does this look good? Would you like to adjust anything, or shall I generate?"
 
