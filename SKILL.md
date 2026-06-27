@@ -62,7 +62,10 @@ Generate images from text prompts, optionally using reference images. **CRITICAL
 
 ##### Detection Logic (check in this order):
 
-1. **User provided a file path/URL?** → `--ref` mode, proceed normally
+1. **User provided a file path/URL?** → `--ref` mode
+   - **Single image**: proceed normally (role confirmation happens in STEP 1)
+   - **2+ images without roles specified**: → **BLOCK** with MULTIPLE Images WITHOUT Roles template below
+   - **2+ images WITH roles specified**: proceed normally
 2. **User's request contains reference-required keywords?** → **BLOCK** and ask for reference image:
    - 优化/增强/修复/enhance/optimize/improve/fix/restore/retouch + 照片/图片/photo/image/picture
    - 改成/变成/换成/change/convert/transform/transfer/make this + 风格/样式/style/look
@@ -87,8 +90,31 @@ Generate images from text prompts, optionally using reference images. **CRITICAL
 提供后我将继续处理。
 ```
 
+##### When MULTIPLE Images WITHOUT Roles — Response Template:
+
+When user provides 2+ reference images but not their roles, BLOCK and ask:
+
+```
+⚠️ 我注意到您提供了多张参考图。为了生成更好的融合效果，请说明每张图的角色定位：
+
+- 图1（文件: xxx.jpg）：这张图作为什么参考？
+- 图2（文件: yyy.png）：这张图作为什么参考？
+
+常见的角色类型：
+• 🏞️ 背景场景 — 保留构图/光影作为画面背景
+• 📦 产品元素 — 保留造型/颜色作为画面主体
+• 🎨 风格参考 — 保留色调/笔触作为风格基准
+• 🌈 色调参考 — 保留色彩搭配/明暗关系
+• 🧍 人物姿态 — 保留动作/角度/比例
+• 🖼️ 构图模板 — 保留布局/层次/视觉流
+• 🪵 材质参考 — 保留质感/纹理/光泽
+
+您也可以直接描述每张图的具体用途，例如："图1作为温暖秋日街道背景，保留其构图和光影；图2作为产品元素，保留其造型和材质"。
+```
+
 **Do NOT proceed past STEP 0 until:**
 - A reference image path/URL is provided (for 🔴 REQUIRED scenarios), OR
+- Each of 2+ reference images has its role confirmed by the user, OR
 - It's confirmed as 🟢 NOT REQUIRED (pure text-to-image)
 
 ---
@@ -107,8 +133,31 @@ Once reference requirements are resolved, confirm the following. Use `AskUserQue
 3. **Purpose (用途)**: What is this for? (social media, e-commerce, poster, avatar, thumbnail, ad)
 4. **Format (规格)**: Aspect ratio? (1:1, 9:16, 16:9, 4:5, 3:4)
 5. **Reference Image Details** (if `--ref` mode):
-   - What to **KEEP** from the reference? (composition, subject, colors, style, structure)
-   - What to **CHANGE**? (style, background, colors, details, mood)
+   - ⚠️ **CRITICAL PRINCIPLE**: 用户没说的不要猜！不要自行脑补 keep/change/role。
+     - 用户只给了图片路径 → 追问用途，不要补"保留构图"之类的默认值
+     - 用户说了 role 但没说 keep/change → 只描述 role，不要补 keep/change
+     - 用户说了"随便"/"你决定" → 才可以合理建议默认值
+     - ❌ Bad: 用户给了一张图，你就说"保留构图和色调，变更主体内容" → 这是脑补，会产生误导
+     - ✅ Good: 用户说"图1作为背景，保留光影，变更色调" → 如实融入 Prompt
+   - **Single image**: Confirm what to KEEP and CHANGE
+     - What to **KEEP** from the reference? (composition, subject, colors, style, structure)
+     - What to **CHANGE**? (style, background, colors, details, mood)
+   - **Multiple images (2+)**: Additionally confirm each image's ROLE
+     - ⚠️ If roles were already gathered in STEP 0, **skip this step** — do not ask again.
+     - **CRITICAL**: If user provides 2+ reference images without specifying what each is for → **ASK** before proceeding
+     - Ask: "这些参考图各自扮演什么角色？（例如：图1作为背景场景，图2作为产品元素，图3作为风格参考）"
+     - If user provides roles for only some images: ask about the remaining ones specifically
+     - ⚠️ 用户只说了角色但没说保留/变更什么 → **不要自行脑补**，只描述角色即可
+     - Common role categories:
+       - 🏞️ 背景场景 (background scene) — 保留构图/光影/空间关系作为画面背景
+       - 📦 产品元素 (product element) — 保留产品造型/颜色/材质作为画面主体
+       - 🎨 风格参考 (style reference) — 保留色调/笔触/渲染方式作为风格基准
+       - 🌈 色调参考 (color palette ref) — 保留色彩搭配/明暗关系
+       - 🧍 人物姿态 (character pose) — 保留人物动作/角度/比例
+       - 🖼️ 构图模板 (composition template) — 保留布局/层次/视觉流
+       - 🪵 材质参考 (material reference) — 保留质感/纹理/光泽
+     - **Role description principles**: 角色描述应自然而非机械标签，描述每张图对最终画面的贡献
+       - ✅ Good: "图1作为温暖的秋日街道背景，保留构图和光影" vs ❌ Bad: "图1=背景"
    - Reference image path: the user-provided file path or URL
 6. **Text/Content (文字)**: Any specific text, labels, or copy that must appear?
 7. **Constraints (约束)**: Any must-avoid elements? (no watermarks, no text, specific colors)

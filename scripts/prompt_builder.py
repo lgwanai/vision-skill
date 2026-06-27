@@ -522,6 +522,188 @@ class PromptBuilder:
                     patterns["style_descriptors"].append(term)
         return patterns
 
+    # ── Reference image instruction builders ──────────────────────────
+
+    @staticmethod
+    def _normalize_ref_info(ref_info: "dict | list | None") -> "list[dict]":
+        """Normalize ref_info to always be a list of per-image dicts.
+
+        Backward compatible: old single-dict {keep, change} becomes [dict].
+        """
+        if not ref_info:
+            return []
+        if isinstance(ref_info, dict):
+            return [ref_info]
+        if isinstance(ref_info, list):
+            # Filter non-dict items defensively
+            return [item for item in ref_info if isinstance(item, dict)]
+        return []
+
+    @staticmethod
+    def _build_single_ref_instruction(ref: dict, is_chinese: bool) -> str:
+        """Build reference instruction for a single image."""
+        role = ref.get("role", "")
+        keep = ref.get("keep", "")
+        change = ref.get("change", "")
+
+        if role:
+            if keep and change:
+                return (
+                    f"参考图（{role}）：保留{keep}，变更{change}。"
+                    if is_chinese else
+                    f"Reference image ({role}): Keep {keep}. Change {change}."
+                )
+            elif keep:
+                return (
+                    f"参考图（{role}）：保留{keep}。"
+                    if is_chinese else
+                    f"Reference image ({role}): Keep {keep}."
+                )
+            elif change:
+                return (
+                    f"参考图（{role}）：变更{change}。"
+                    if is_chinese else
+                    f"Reference image ({role}): Change {change}."
+                )
+            else:
+                return (
+                    f"参考图（{role}）：作为{role}参考。"
+                    if is_chinese else
+                    f"Reference image ({role}): Use as {role} reference."
+                )
+        else:
+            if keep and change:
+                return (
+                    "[参考图] 保留：{keep}。变更：{change}。"
+                    "不要逐字复述参考图，用它约束主体/结构/风格方向。"
+                    if is_chinese else
+                    "Reference image is attached. Keep: {keep}. Change: {change}. "
+                    "Use it to guide subject, structure, or style; do not describe it as prompt filler."
+                ).format(keep=keep, change=change)
+            elif keep:
+                return (
+                    f"[参考图] 保留：{keep}。用它约束主体/结构/风格方向。"
+                    if is_chinese else
+                    f"Reference image is attached. Keep: {keep}. Use it to guide the output."
+                )
+            elif change:
+                return (
+                    f"[参考图] 变更：{change}。用它约束风格方向。"
+                    if is_chinese else
+                    f"Reference image is attached. Change: {change}. Use it to guide the output."
+                )
+            else:
+                return (
+                    "[参考图] 已随请求提供，参考其画面方向。"
+                    if is_chinese else
+                    "Reference image is attached. Use it to guide the output."
+                )
+
+    @staticmethod
+    def build_ref_instruction(ref_info: "list[dict]", lang: str = "zh") -> str:
+        """Generate natural-language reference image instructions.
+
+        Principle: only express what the user explicitly provided.
+        Never auto-fill keep/change defaults — that produces misleading prompts.
+        """
+        if not ref_info:
+            return ""
+
+        is_chinese = lang == "zh"
+        count = len(ref_info)
+
+        if count == 1:
+            return PromptBuilder._build_single_ref_instruction(ref_info[0], is_chinese)
+
+        # Multiple images
+        lines = []
+        if is_chinese:
+            lines.append("【参考图说明】")
+            for i, ref in enumerate(ref_info, 1):
+                role = ref.get("role", "")
+                keep = ref.get("keep", "")
+                change = ref.get("change", "")
+                prefix = f"图{i}"
+                if role and keep and change:
+                    lines.append(f"• {prefix}（{role}）：保留{keep}，变更{change}")
+                elif role and keep:
+                    lines.append(f"• {prefix}（{role}）：保留{keep}")
+                elif role and change:
+                    lines.append(f"• {prefix}（{role}）：变更{change}")
+                elif role:
+                    lines.append(f"• {prefix}（{role}）：作为{role}参考")
+                elif keep and change:
+                    lines.append(f"• {prefix}：保留{keep}，变更{change}")
+                elif keep:
+                    lines.append(f"• {prefix}：保留{keep}")
+                elif change:
+                    lines.append(f"• {prefix}：变更{change}")
+                else:
+                    lines.append(f"• {prefix}：参考其画面方向")
+            lines.append("请将以上参考融合为一张统一画面。")
+        else:
+            lines.append("[Reference Image Instructions]")
+            for i, ref in enumerate(ref_info, 1):
+                role = ref.get("role", "")
+                keep = ref.get("keep", "")
+                change = ref.get("change", "")
+                prefix = f"Image {i}"
+                if role and keep and change:
+                    lines.append(f"- {prefix} ({role}): Keep {keep}. Change {change}.")
+                elif role and keep:
+                    lines.append(f"- {prefix} ({role}): Keep {keep}.")
+                elif role and change:
+                    lines.append(f"- {prefix} ({role}): Change {change}.")
+                elif role:
+                    lines.append(f"- {prefix} ({role}): Use as {role} reference.")
+                elif keep and change:
+                    lines.append(f"- {prefix}: Keep {keep}. Change {change}.")
+                elif keep:
+                    lines.append(f"- {prefix}: Keep {keep}.")
+                elif change:
+                    lines.append(f"- {prefix}: Change {change}.")
+                else:
+                    lines.append(f"- {prefix}: Use as visual reference.")
+            lines.append("Blend the above references into a single cohesive image.")
+
+        return "\n".join(lines)
+
+    @staticmethod
+    def _build_ref_info_from_args(ref_images, ref_keeps, ref_changes, ref_roles,
+                                  default_style=""):
+        """Build ref_info list from CLI argument arrays.
+
+        Shared between prompt_builder CLI and vision_cli handle_generate.
+        Emits warnings on length mismatches.
+        """
+        ref_info_list = []
+        if ref_images:
+            n_images = len(ref_images)
+            # Warn on length mismatches
+            for name, vals in [("--ref-role", ref_roles), ("--ref-keep", ref_keeps),
+                               ("--ref-change", ref_changes)]:
+                if vals and len(vals) != n_images:
+                    import sys
+                    print(f"Warning: {name} has {len(vals)} values but --ref has {n_images} "
+                          f"images. Values will be aligned positionally; excess will be ignored.",
+                          file=sys.stderr)
+            for i, img in enumerate(ref_images):
+                entry = {}
+                if i < len(ref_keeps):
+                    entry["keep"] = ref_keeps[i]
+                if i < len(ref_changes):
+                    entry["change"] = ref_changes[i]
+                if i < len(ref_roles):
+                    entry["role"] = ref_roles[i]
+                ref_info_list.append(entry)
+        else:
+            # Backward compat: keep/change provided without --ref images
+            ref_info_list = [{
+                "keep": ref_keeps[0] if ref_keeps else "composition and subject",
+                "change": ref_changes[0] if ref_changes else default_style,
+            }]
+        return ref_info_list
+
     def _compose_prompt(self, req, strategy, analysis, patterns, lang, fidelity_config=None):
         """Core prompt composition logic with fidelity control."""
         if fidelity_config is None:
@@ -552,17 +734,18 @@ class PromptBuilder:
             prompt = self._build_natural_prompt(req, strategy, patterns, lang)
             methodology.append("Using concise creative brief approach")
 
-        # Reference image handling
+        # Reference image handling (supports multiple images with distinct roles)
         if req.get("ref_info"):
-            ref = req["ref_info"]
-            keep = ref.get("keep", "composition and subject structure")
-            change = ref.get("change", req.get("style", "style"))
-            if lang == "zh":
-                ref_instruction = f"参考图已随请求提供。保留：{keep}。变化：{change}。不要逐字复述参考图，用它约束主体/结构/风格方向。"
-            else:
-                ref_instruction = f"Reference image is attached. Keep: {keep}. Change: {change}. Use it to guide subject, structure, or style; do not describe it as prompt filler."
-            prompt = ref_instruction + "\n" + prompt
-            methodology.append(f"Image-to-image mode: keep [{keep}], change [{change}]")
+            ref_info_list = self._normalize_ref_info(req["ref_info"])
+            ref_instruction = self.build_ref_instruction(ref_info_list, lang)
+            if ref_instruction:
+                prompt = ref_instruction + "\n" + prompt
+            for i, ref in enumerate(ref_info_list, 1):
+                role = ref.get("role", "")
+                role_suffix = f" ({role})" if role else ""
+                methodology.append(
+                    f"Ref{i}{role_suffix}: keep=[{ref.get('keep', '')}], change=[{ref.get('change', '')}]"
+                )
 
         # Raycast parameterization
         if req.get("raycast"):
@@ -894,8 +1077,12 @@ def main():
     parser.add_argument("--constraints", default="", help="Negative constraints (comma-separated)")
     parser.add_argument("--ref", "--ref-image", dest="ref_images", action="append", default=[],
                         help="Reference image path/URL to pass to generation")
-    parser.add_argument("--ref-keep", default="", help="(Image-to-image) What to keep from reference")
-    parser.add_argument("--ref-change", default="", help="(Image-to-image) What to change")
+    parser.add_argument("--ref-keep", action="append", default=[],
+                        help="(Image-to-image) What to keep from each reference image (use once per image)")
+    parser.add_argument("--ref-change", action="append", default=[],
+                        help="(Image-to-image) What to change from each reference image (use once per image)")
+    parser.add_argument("--ref-role", action="append", default=[],
+                        help="(Image-to-image) Role for each reference image, e.g. '背景场景' (use once per image)")
     parser.add_argument("--raycast", action="store_true", help="Enable Raycast dynamic parameters")
     parser.add_argument("--complex", action="store_true", help="Use JSON-structured approach")
     parser.add_argument("--search-limit", type=int, default=3, help="Number of cases to reference")
@@ -935,11 +1122,20 @@ def main():
         "raycast": args.raycast,
     }
 
-    if args.ref_images or args.ref_keep or args.ref_change:
-        requirements["ref_info"] = {
-            "keep": args.ref_keep or "composition and subject",
-            "change": args.ref_change or args.style,
-        }
+    # Reference image metadata — use shared builder (handles backward compat)
+    # Accept old single-string usage: convert to list for uniform handling
+    ref_keeps = args.ref_keep if isinstance(args.ref_keep, list) else (
+        [args.ref_keep] if args.ref_keep else [])
+    ref_changes = args.ref_change if isinstance(args.ref_change, list) else (
+        [args.ref_change] if args.ref_change else [])
+    ref_roles = getattr(args, "ref_role", [])
+    if isinstance(ref_roles, str):
+        ref_roles = [ref_roles] if ref_roles else []
+
+    if args.ref_images or ref_keeps or ref_changes or ref_roles:
+        requirements["ref_info"] = PromptBuilder._build_ref_info_from_args(
+            args.ref_images, ref_keeps, ref_changes, ref_roles, args.style
+        )
 
     # Build prompt
     result = builder.build(requirements, cases, args.lang, fidelity=args.fidelity, bilingual=bilingual)

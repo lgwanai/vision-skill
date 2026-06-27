@@ -13,6 +13,7 @@ import json
 import time
 import requests
 from task_utils import create_task, get_task, repair_json
+from prompt_builder import PromptBuilder
 
 # 获取脚本所在目录
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -267,6 +268,16 @@ def handle_generate(args):
                 print(json.dumps({"error": f"参考图不存在或无效URL: {image_path}"}, ensure_ascii=False))
                 return
 
+        # Build and inject ref instructions when per-image metadata is provided
+        if args.ref_roles or args.ref_keeps or args.ref_changes:
+            ref_info_list = PromptBuilder._build_ref_info_from_args(
+                args.ref_images, args.ref_keeps, args.ref_changes, args.ref_roles
+            )
+            if ref_info_list:
+                ref_instruction = PromptBuilder.build_ref_instruction(ref_info_list, "zh")
+                if ref_instruction:
+                    prompt = ref_instruction + "\n" + prompt
+
     params = {
         "prompt": prompt,
         "ref_images": args.ref_images,
@@ -327,6 +338,12 @@ def main():
     generate_parser = subparsers.add_parser("generate", help="Generate images")
     generate_parser.add_argument("prompt", help="Prompt for generation")
     generate_parser.add_argument("--ref", dest="ref_images", nargs="+", help="Reference image paths or URLs")
+    generate_parser.add_argument("--ref-role", dest="ref_roles", nargs="+", default=[],
+                                 help="Role for each reference image (order matches --ref)")
+    generate_parser.add_argument("--ref-keep", dest="ref_keeps", nargs="+", default=[],
+                                 help="What to keep from each reference image (order matches --ref)")
+    generate_parser.add_argument("--ref-change", dest="ref_changes", nargs="+", default=[],
+                                 help="What to change from each reference image (order matches --ref)")
     generate_parser.add_argument("--seq", dest="seq_count", type=int, help="Number of sequential images to generate")
     generate_parser.add_argument("--style", choices=STYLE_PRESETS.keys(), help="Preset generation style")
     generate_parser.add_argument("--quality", choices=["fast", "balanced", "high"], default="balanced", help="Quality mode")
